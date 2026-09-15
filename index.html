@@ -3,7 +3,7 @@
 <html class="scroll-smooth" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Yousuf Khairaldeen - Content Strategist &amp; Creative Designer</title>
+<title>Yusuf Khairaldeen — Content Strategist &amp; Creative Designer</title>
 <!-- Tailwind CSS v3 with forms and container queries -->
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script>
@@ -12,13 +12,13 @@
         extend: {
           colors: {
             brand: {
-              dark: '#0e0514',
-              surface: '#170b24',
-              card: '#1f0d33',
-              purple: '#9333ea',
-              magenta: '#ec4899',
-              accent: '#d946ef',
-              border: '#3b185f'
+              base: '#06020e',
+              surface: '#0f051b',
+              card: 'rgba(26, 11, 46, 0.7)',
+              cardBorder: 'rgba(147, 51, 234, 0.25)',
+              neonPink: '#ec4899',
+              neonFuchsia: '#d946ef',
+              neonViolet: '#8b5cf6'
             }
           },
           fontFamily: {
@@ -29,23 +29,32 @@
     }
   </script>
 <style data-purpose="custom-animations">
-    @keyframes pulseGlow {
+    @keyframes pulseRingGlow {
       0%, 100% {
-        box-shadow: 0 0 25px -5px rgba(236, 72, 153, 0.45), 0 0 15px -3px rgba(147, 51, 234, 0.35);
+        box-shadow: 0 0 25px -4px rgba(236, 72, 153, 0.45), 0 0 15px -2px rgba(139, 92, 246, 0.35);
       }
       50% {
-        box-shadow: 0 0 45px 5px rgba(236, 72, 153, 0.75), 0 0 30px 2px rgba(168, 85, 247, 0.55);
+        box-shadow: 0 0 45px 6px rgba(236, 72, 153, 0.7), 0 0 32px 6px rgba(217, 70, 239, 0.55);
       }
     }
     .glowing-portrait-ring {
-      animation: pulseGlow 4s ease-in-out infinite;
+      animation: pulseRingGlow 4.5s ease-in-out infinite;
+    }
+    .glass-card {
+      background: rgba(26, 11, 46, 0.65);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(147, 51, 234, 0.25);
+    }
+    .glass-card:hover {
+      border-color: rgba(236, 72, 153, 0.5);
     }
     .ripple {
       position: absolute;
       border-radius: 50%;
       transform: scale(0);
       animation: ripple-effect 0.6s linear;
-      background-color: rgba(255, 255, 255, 0.35);
+      background-color: rgba(255, 255, 255, 0.3);
       pointer-events: none;
     }
     @keyframes ripple-effect {
@@ -54,42 +63,35 @@
         opacity: 0;
       }
     }
-    .glass-card {
-      background: linear-gradient(135deg, rgba(35, 14, 56, 0.82) 0%, rgba(20, 8, 34, 0.92) 100%);
-      backdrop-filter: blur(14px);
-    }
   </style>
 </head>
-<body class="bg-[#0c0515] text-slate-100 font-sans selection:bg-pink-500 selection:text-white antialiased relative min-h-screen">
+<body class="bg-[#06020e] text-slate-100 font-sans selection:bg-pink-500 selection:text-white antialiased relative min-h-screen">
 <!-- BEGIN: NavigationHeader -->
-<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#0e0514]/90 backdrop-blur-md border-b border-purple-950/60" id="main-header">
+<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#06020e]/85 backdrop-blur-md border-b border-purple-950/50" id="main-header">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
 <!-- Brand Logo -->
 <a class="flex items-center gap-3 group" data-purpose="brand-logo" href="#hero">
 <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-purple-600 via-fuchsia-500 to-pink-500 flex items-center justify-center font-black text-xl text-white shadow-lg shadow-purple-900/40 group-hover:scale-105 transition-transform duration-300">
-          Y
-        </div>
+        Y
+      </div>
 <div class="flex flex-col">
-<span class="font-extrabold tracking-wider text-base text-white leading-tight">YOUSUF</span>
-<span class="text-[9px] tracking-widest text-pink-400 uppercase font-semibold">Content Strategist</span>
+<span class="font-extrabold tracking-wider text-base text-white leading-tight">YUSUF KHAIRALDEEN</span>
+<span class="text-[9px] tracking-widest text-pink-400 uppercase font-semibold">Content &amp; Creative</span>
 </div>
 </a>
 <!-- Desktop Nav Items -->
-<nav class="hidden md:flex items-center gap-8" data-purpose="desktop-nav">
-<a class="nav-link text-sm font-medium text-slate-300 hover:text-pink-400 transition-colors py-1 relative" href="#about">About</a>
-<a class="nav-link text-sm font-medium text-slate-300 hover:text-pink-400 transition-colors py-1 relative" href="#work">Work</a>
-<a class="nav-link text-sm font-medium text-slate-300 hover:text-pink-400 transition-colors py-1 relative" href="#services">Services</a>
-<a class="nav-link text-sm font-medium text-slate-300 hover:text-pink-400 transition-colors py-1 relative" href="#contact">Contact</a>
+<nav class="hidden md:flex items-center gap-7" data-purpose="desktop-nav">
+<a class="nav-link text-sm font-medium text-slate-300 hover:text-pink-400 transition-colors py-1" href="#work">Work</a>
+<a class="nav-link text-sm font-medium text-slate-300 hover:text-pink-400 transition-colors py-1" href="#about">About</a>
+<a class="nav-link text-sm font-medium text-slate-300 hover:text-pink-400 transition-colors py-1" href="#services">Services</a>
+<a class="nav-link text-sm font-medium text-slate-300 hover:text-pink-400 transition-colors py-1" href="#process">Process</a>
+<a class="nav-link text-sm font-medium text-slate-300 hover:text-pink-400 transition-colors py-1" href="#capabilities">Capabilities</a>
+<a class="nav-link text-sm font-medium text-slate-300 hover:text-pink-400 transition-colors py-1" href="#contact">Contact</a>
 </nav>
-<!-- Language Toggle & CTA Button -->
-<div class="hidden md:flex items-center gap-5">
-<!-- Language Switcher -->
-<div class="flex items-center p-1 bg-purple-950/70 border border-purple-800/60 rounded-full text-xs font-semibold">
-<button aria-label="English language active" class="px-2.5 py-1 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-sm">EN</button>
-<button aria-label="Arabic language switch" class="px-2.5 py-1 rounded-full text-slate-400 hover:text-white transition-colors">AR</button>
-</div>
+<!-- CTA Button -->
+<div class="hidden md:flex items-center gap-4">
 <a class="btn-ripple relative overflow-hidden bg-gradient-to-r from-purple-600 via-fuchsia-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white text-xs tracking-wider uppercase font-bold px-6 py-3 rounded-full shadow-lg shadow-pink-900/30 hover:shadow-pink-600/40 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-1.5" href="#contact">
-<span>GET IN TOUCH</span>
+<span>Let’s Connect</span>
 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
 </a>
 </div>
@@ -100,165 +102,103 @@
 </button>
 </div>
 <!-- Mobile Dropdown Menu -->
-<div class="hidden md:hidden bg-[#12071f] border-b border-purple-900/60 px-6 pt-3 pb-6 flex flex-col gap-4 shadow-2xl" id="mobile-menu">
-<a class="mobile-nav-link text-base font-medium text-slate-200 py-2 border-b border-purple-900/30 hover:text-pink-400" href="#about">About</a>
+<div class="hidden md:hidden bg-[#0d041a] border-b border-purple-900/60 px-6 pt-3 pb-6 flex flex-col gap-4 shadow-2xl" id="mobile-menu">
 <a class="mobile-nav-link text-base font-medium text-slate-200 py-2 border-b border-purple-900/30 hover:text-pink-400" href="#work">Work</a>
+<a class="mobile-nav-link text-base font-medium text-slate-200 py-2 border-b border-purple-900/30 hover:text-pink-400" href="#about">About</a>
 <a class="mobile-nav-link text-base font-medium text-slate-200 py-2 border-b border-purple-900/30 hover:text-pink-400" href="#services">Services</a>
+<a class="mobile-nav-link text-base font-medium text-slate-200 py-2 border-b border-purple-900/30 hover:text-pink-400" href="#process">Process</a>
+<a class="mobile-nav-link text-base font-medium text-slate-200 py-2 border-b border-purple-900/30 hover:text-pink-400" href="#capabilities">Capabilities</a>
 <a class="mobile-nav-link text-base font-medium text-slate-200 py-2 border-b border-purple-900/30 hover:text-pink-400" href="#contact">Contact</a>
-<div class="flex items-center justify-between pt-2">
-<div class="flex items-center p-1 bg-purple-950 border border-purple-800 rounded-full text-xs font-semibold">
-<span class="px-3 py-1 bg-pink-600 rounded-full text-white">EN</span>
-<span class="px-3 py-1 text-slate-400">AR</span>
-</div>
-<a class="mobile-nav-link text-xs font-bold uppercase tracking-wider text-pink-400 py-2" href="#contact">Get in Touch →</a>
-</div>
+<a class="btn-ripple mt-2 w-full py-3 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 text-center font-bold text-xs uppercase tracking-wider text-white" href="#contact">Let’s Connect →</a>
 </div>
 </header>
 <!-- END: NavigationHeader -->
 <main>
-<!-- BEGIN: HeroSection -->
-<section class="relative pt-36 pb-24 md:pt-48 md:pb-36 overflow-hidden flex flex-col items-center justify-center text-center px-4" data-purpose="hero-section" id="hero">
-<!-- Cosmic Gradient Glow Background -->
-<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[550px] bg-gradient-to-br from-pink-600/30 via-purple-700/25 to-transparent rounded-full blur-[120px] pointer-events-none -z-10"></div>
-<!-- Curved bottom glow line mimicking screenshot banner -->
-<div class="absolute -bottom-10 left-0 right-0 h-28 bg-gradient-to-r from-purple-900/0 via-pink-600/20 to-purple-900/0 blur-2xl pointer-events-none"></div>
-<!-- Strategy Badge -->
-<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-pink-500/40 bg-pink-950/30 backdrop-blur-md text-pink-300 text-xs font-semibold tracking-wider uppercase mb-8 shadow-inner shadow-pink-500/20 animate-fade-in">
-<span class="w-1.5 h-1.5 rounded-full bg-pink-500 animate-ping"></span>
-        CONTENT STRATEGY • CREATIVE DESIGN • AI INNOVATION
-      </div>
-<!-- Main Headline -->
-<h1 class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-white uppercase max-w-5xl leading-[1.08] mb-6">
-        YOUSUF <br class="hidden sm:inline"/>
-<span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-pink-200">KHAIRALDEEN</span>
-</h1>
-<!-- Subtitle -->
-<p class="text-lg sm:text-xl md:text-2xl text-slate-300 font-medium max-w-3xl mb-5 leading-relaxed">
-        Building Brands Through Strategic Content &amp; Creative Design
-      </p>
-<!-- Contact Meta -->
-<div class="text-xs sm:text-sm text-pink-400/90 font-medium mb-10 flex flex-wrap items-center justify-center gap-2">
-<span class="text-slate-200 font-semibold">+20 10 91189532</span>
-<span class="text-pink-500/60">|</span>
-<span class="text-slate-300">Tanta, Egypt &amp; Global Remote</span>
+<!-- BEGIN: 1. HeroSection -->
+<section class="relative pt-36 pb-20 md:pt-48 md:pb-28 overflow-hidden flex flex-col items-center justify-center text-center px-4" data-purpose="hero-section" id="hero">
+<!-- Cosmic background glow -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[720px] h-[520px] bg-gradient-to-br from-pink-600/25 via-purple-700/20 to-transparent rounded-full blur-[130px] pointer-events-none -z-10"></div>
+<div class="absolute -bottom-10 left-0 right-0 h-28 bg-gradient-to-r from-purple-900/0 via-pink-600/15 to-purple-900/0 blur-2xl pointer-events-none"></div>
+<!-- Tag Kicker Pill -->
+<div class="flex flex-wrap items-center justify-center gap-2.5 mb-6">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-purple-700/50 bg-[#17082e]/80 text-slate-300 text-xs font-semibold tracking-wide uppercase shadow-sm">
+<span>CONTENT STRATEGY • CREATIVE DESIGN • BRAND COMMUNICATION</span>
 </div>
-<!-- Hero Call-to-Actions -->
-<div class="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-emerald-500/40 bg-emerald-950/30 text-emerald-300 text-xs font-medium">
+<span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+<span>Available for Selected Q2/Q3 Projects</span>
+</div>
+</div>
+<!-- Primary Headline -->
+<h1 class="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-white max-w-5xl leading-[1.12] mb-6">
+      Turning Ideas Into <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-fuchsia-400 to-purple-300">Strategic Content</span> &amp; Creative Experiences
+    </h1>
+<!-- Supporting Paragraph -->
+<p class="text-base sm:text-lg md:text-xl text-slate-300 font-normal max-w-2xl mb-4 leading-relaxed">
+      I combine strategic thinking with creative execution to help brands turn ideas into clear, consistent, and engaging content.
+    </p>
+<!-- Philosophy Statement -->
+<p class="text-sm sm:text-base font-semibold text-pink-400 italic mb-8">
+      “I think strategically before I create.”
+    </p>
+<!-- CTAs -->
+<div class="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto mb-10">
 <a class="btn-ripple w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-fuchsia-600 to-pink-600 hover:from-fuchsia-500 hover:to-pink-500 text-white font-bold text-sm tracking-wide shadow-xl shadow-pink-900/40 hover:shadow-pink-600/50 hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-2" href="#work">
 <span>Explore My Work</span>
-<svg class="w-4 h-4 animate-bounce" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 14l-7 7m0 0l-7-7m7 7V3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 14l-7 7m0 0l-7-7m7 7V3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
 </a>
-<a class="btn-ripple w-full sm:w-auto px-8 py-4 rounded-xl bg-[#210c37]/90 hover:bg-[#2e124d] border border-purple-600/50 hover:border-pink-500 text-slate-100 font-semibold text-sm tracking-wide hover:scale-105 active:scale-95 transition-all flex items-center justify-center" href="#contact">
-          Let's Connect
-        </a>
+<a class="btn-ripple w-full sm:w-auto px-8 py-4 rounded-xl bg-[#1b0a2f]/90 hover:bg-[#280f44] border border-purple-700/60 hover:border-pink-500 text-slate-100 font-semibold text-sm tracking-wide hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-1.5" href="#contact">
+<span>Let’s Connect</span>
+<span>→</span>
+</a>
+</div>
+<!-- Small Step Path -->
+<div class="flex items-center gap-2 sm:gap-3 text-xs font-semibold uppercase tracking-widest text-slate-400/90 border border-purple-900/60 bg-[#120520]/60 px-5 py-2.5 rounded-full">
+<span class="text-pink-400">STRATEGY</span>
+<span class="text-slate-600">→</span>
+<span class="text-pink-300">CONTENT</span>
+<span class="text-slate-600">→</span>
+<span class="text-fuchsia-300">CREATIVE EXECUTION</span>
+<span class="text-slate-600">→</span>
+<span class="text-purple-300">OPTIMIZATION</span>
 </div>
 </section>
-<!-- END: HeroSection -->
-<!-- BEGIN: AboutSection -->
-<section class="py-24 bg-[#11061c] relative border-t border-purple-950/40" data-purpose="about-section" id="about">
+<!-- END: 1. HeroSection -->
+<!-- BEGIN: 2. SelectedWorkSection -->
+<section class="py-24 bg-[#06020e] relative border-t border-purple-950/40" data-purpose="work-section" id="work">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 <!-- Section Header -->
-<div class="text-center mb-16">
-<h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight">About Me</h2>
-<div class="w-16 h-1 bg-pink-500 mx-auto mt-4 rounded-full"></div>
-</div>
-<!-- Two Column Layout -->
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center mb-16">
-<!-- Narrative Left Column -->
-<div class="lg:col-span-7 space-y-6">
-<p class="text-xl sm:text-2xl font-bold leading-snug text-slate-100">
-              I'm a <span class="text-pink-400 font-extrabold">Content Strategist</span> and <span class="text-fuchsia-400 font-extrabold">Creative Designer</span> building authentic brands for luxury, educational, and professional service brands across the Gulf and Egypt.
-            </p>
-<p class="text-slate-300 leading-relaxed text-base">
-              My background spans clinical radiology and digital strategy — an unusual combination that gives me a unique perspective. While I'm trained in medical imaging, my real passion lies in transforming brand visions into compelling stories that resonate deeply with audiences.
-            </p>
-<!-- Key Experience Bullets Box -->
-<div class="bg-[#1b0a2d] border border-purple-800/40 rounded-2xl p-6 shadow-xl space-y-3">
-<div class="text-xs font-bold uppercase tracking-wider text-pink-400 mb-2">
-                Over the past two years, I've worked with premium brands to:
-              </div>
-<ul class="space-y-2 text-sm text-slate-300">
-<li class="flex items-start gap-2.5">
-<span class="text-pink-500 mt-1 font-bold">•</span>
-<span>Design comprehensive content strategies from scratch</span>
-</li>
-<li class="flex items-start gap-2.5">
-<span class="text-pink-500 mt-1 font-bold">•</span>
-<span>Create AI-powered visual identities and scalable design frameworks</span>
-</li>
-<li class="flex items-start gap-2.5">
-<span class="text-pink-500 mt-1 font-bold">•</span>
-<span>Build engaged communities through authentic storytelling</span>
-</li>
-<li class="flex items-start gap-2.5">
-<span class="text-pink-500 mt-1 font-bold">•</span>
-<span>Develop scalable content systems that grow brands organically</span>
-</li>
-</ul>
-</div>
-<!-- Philosophy Quote Card -->
-<div class="border-l-4 border-pink-500 pl-4 py-2 text-slate-300 italic text-sm leading-relaxed bg-purple-950/20 rounded-r-lg">
-<span class="text-pink-400 font-semibold not-italic">My Philosophy:</span> I don't just create content — I architect brand experiences. Every strategy, every design, and every word serves a clear purpose: connecting your brand to the right audience at the right moment.
-            </div>
-</div>
-<!-- Portrait Right Column -->
-<div class="lg:col-span-5 flex flex-col items-center justify-center">
-<div class="relative group">
-<!-- Animated Glowing Purple/Pink Outer Ring -->
-<div class="w-64 h-64 sm:w-72 sm:h-72 rounded-full p-2 glowing-portrait-ring bg-gradient-to-tr from-pink-600 via-fuchsia-600 to-purple-600 transition-all duration-500">
-<img alt="Portrait of Yousuf Khairaldeen" class="w-full h-full object-cover rounded-full filter grayscale contrast-125 brightness-95" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVAzOcoTeUmajc5v9emPWQfFUC5t2eh-9CyZF-2_GMtPVhtHfF9tqarOWLMCUvqFrDcx-gvL2HltmkmbXPNX7S19n29xyXButWzyATtabgEWAGVRV1M3h0gB8-9ZihXHcGvZgM_zf1GYBVJUNb-ZkmLznDUVhq9EvzbMRRpDHuERA7p6G9gxSwyNSUuDDQuDODFXBdvDSCYIiIxphSQfCV5SIIeQKijOSrrvJnJ-O-QPQag6uRIrpAs2BxfWL9LYdMwQ"/>
-</div>
-<!-- Target Markets Badge -->
-<div class="mt-6 flex flex-col items-center bg-[#1e0a35] border border-purple-700/60 py-2.5 px-6 rounded-2xl shadow-xl">
-<span class="text-[10px] font-bold tracking-widest text-slate-400 uppercase">TARGET MARKETS</span>
-<span class="text-xs font-extrabold text-pink-400 tracking-wide">Premium Gulf &amp; Egypt</span>
-</div>
-</div>
-</div>
+<div class="text-center max-w-3xl mx-auto mb-14">
+<div class="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-pink-400 bg-pink-950/40 border border-pink-700/40 px-3 py-1 rounded-full mb-3">
+          Selected Case Studies
+        </div>
+<h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight mb-4">
+          Strategic Work &amp; Measurable Impact
+        </h2>
+<p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+          Four real client projects demonstrating research, strategic positioning, visual execution, and verified results. Click any case study for the complete 7-part breakdown.
+        </p>
 </div>
 <!-- Discipline Filter Pills -->
-<div class="pt-8 border-t border-purple-950/60" data-purpose="portfolio-filters">
-<div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4 text-center sm:text-left">
-            FILTER PORTFOLIO BY DISCIPLINE:
-          </div>
-<div class="flex flex-wrap items-center gap-2.5 justify-center sm:justify-start" id="filter-container">
-<button class="filter-btn active px-5 py-2 rounded-full text-xs font-semibold tracking-wide transition-all duration-200 bg-pink-600 text-white shadow-lg shadow-pink-900/50" data-filter="all">
-              All Disciplines
-            </button>
-<button class="filter-btn px-5 py-2 rounded-full text-xs font-semibold tracking-wide transition-all duration-200 bg-[#1e0d36] text-slate-300 hover:bg-purple-900/50 border border-purple-800/60" data-filter="content-strategy">
-              Content Strategy
-            </button>
-<button class="filter-btn px-5 py-2 rounded-full text-xs font-semibold tracking-wide transition-all duration-200 bg-[#1e0d36] text-slate-300 hover:bg-purple-900/50 border border-purple-800/60" data-filter="personal-branding">
-              Personal Branding
-            </button>
-<button class="filter-btn px-5 py-2 rounded-full text-xs font-semibold tracking-wide transition-all duration-200 bg-[#1e0d36] text-slate-300 hover:bg-purple-900/50 border border-purple-800/60" data-filter="ai-prompt">
-              AI Prompt Engineering
-            </button>
-<button class="filter-btn px-5 py-2 rounded-full text-xs font-semibold tracking-wide transition-all duration-200 bg-[#1e0d36] text-slate-300 hover:bg-purple-900/50 border border-purple-800/60" data-filter="creative-design">
-              Creative Design
-            </button>
+<div class="flex flex-wrap items-center justify-center gap-2.5 mb-12" id="filter-container">
+<button class="filter-btn active px-4 sm:px-5 py-2 rounded-full text-xs font-semibold tracking-wide transition-all duration-200 bg-pink-600 text-white shadow-lg shadow-pink-900/50" data-filter="all">
+          All Case Studies
+        </button>
+<button class="filter-btn px-4 sm:px-5 py-2 rounded-full text-xs font-semibold tracking-wide transition-all duration-200 bg-[#190a2e] text-slate-300 hover:bg-purple-900/50 border border-purple-800/60" data-filter="content-strategy">
+          Content Strategy
+        </button>
+<button class="filter-btn px-4 sm:px-5 py-2 rounded-full text-xs font-semibold tracking-wide transition-all duration-200 bg-[#190a2e] text-slate-300 hover:bg-purple-900/50 border border-purple-800/60" data-filter="creative-direction">
+          Creative Direction &amp; Design
+        </button>
+<button class="filter-btn px-4 sm:px-5 py-2 rounded-full text-xs font-semibold tracking-wide transition-all duration-200 bg-[#190a2e] text-slate-300 hover:bg-purple-900/50 border border-purple-800/60" data-filter="personal-branding">
+          Personal Branding
+        </button>
 </div>
-</div>
-</div>
-</section>
-<!-- END: AboutSection -->
-<!-- BEGIN: FeaturedWorkSection -->
-<section class="py-24 bg-[#0a0312] relative" data-purpose="work-section" id="work">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<!-- Section Header -->
-<div class="text-center max-w-3xl mx-auto mb-16">
-<h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight mb-4">Featured Work</h2>
-<div class="w-16 h-1 bg-pink-500 mx-auto mb-4 rounded-full"></div>
-<p class="text-slate-400 text-sm sm:text-base leading-relaxed">
-            Case studies of high-impact content strategies, viral campaigns, and organic brand acceleration. Click any case study to explore full details in the modal.
-          </p>
-</div>
-<!-- Cards Grid -->
+<!-- Projects Grid -->
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="projects-grid">
-<!-- Card 1: Al Rawi Academy -->
-<div class="project-card glass-card rounded-2xl border border-purple-900/60 overflow-hidden hover:border-pink-500/60 transition-all duration-300 flex flex-col justify-between group shadow-xl" data-categories="content-strategy ai-prompt creative-design" data-project-id="rawi">
+<!-- Project 1: Al Rawi Academy -->
+<div class="project-card glass-card rounded-2xl overflow-hidden transition-all duration-300 flex flex-col justify-between group shadow-xl hover:-translate-y-1 cursor-pointer" data-categories="content-strategy creative-direction" data-project-id="rawi">
 <div class="p-6 sm:p-7">
-<!-- Top Row: Title & Badge -->
 <div class="flex items-start justify-between gap-4 mb-3">
 <div>
 <div class="flex items-center gap-2">
@@ -266,384 +206,659 @@
 <h3 class="text-xl font-bold text-white group-hover:text-pink-300 transition-colors">Al Rawi Academy</h3>
 </div>
 <div class="text-xs text-pink-400 font-medium mt-0.5">Quranic Education Platform</div>
-<div class="text-[11px] text-slate-500 mt-0.5">Mar 2026 - Present</div>
 </div>
-<span class="text-[11px] font-semibold text-pink-300 bg-pink-950/60 border border-pink-700/50 px-3 py-1 rounded-full whitespace-nowrap">
-                  Content Specialist
-                </span>
+<span class="text-[11px] font-semibold text-pink-300 bg-pink-950/60 border border-pink-700/50 px-2.5 py-1 rounded-full whitespace-nowrap">
+                Content Strategy
+              </span>
 </div>
-<!-- Overview Text -->
-<div class="text-xs sm:text-sm text-slate-300 space-y-2 mb-5">
-<p><strong class="text-slate-200">Overview:</strong> Leading content strategy and organic growth for a global Quranic education platform targeting non-Arabic speaking audiences on LinkedIn.</p>
-<p><strong class="text-slate-200">Challenge:</strong> Establish credibility in a competitive educational market while maintaining authentic Islamic values.</p>
+<!-- Role Tags -->
+<div class="flex flex-wrap gap-1.5 mb-4">
+<span class="text-[10px] bg-purple-950/80 text-slate-300 px-2 py-0.5 rounded border border-purple-800/40">Content Strategy</span>
+<span class="text-[10px] bg-purple-950/80 text-slate-300 px-2 py-0.5 rounded border border-purple-800/40">Content Planning</span>
+<span class="text-[10px] bg-purple-950/80 text-slate-300 px-2 py-0.5 rounded border border-purple-800/40">AI-assisted Visuals</span>
+<span class="text-[10px] bg-purple-950/80 text-slate-300 px-2 py-0.5 rounded border border-purple-800/40">Bilingual Copywriting</span>
 </div>
-<!-- Media Preview -->
-<div class="rounded-xl overflow-hidden border border-purple-900/50 bg-[#160a24] aspect-[16/10] relative mb-6">
-<img alt="Al Rawi Academy LinkedIn Growth Analytics Dashboard" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGLMDzPVVthPFcbrhs6Kg2bBjlRpjhEU6ppS-ToZy87hakfr_8Tv473f77zURwdErM1HGiHk0f48H0PDdnY0vOTOYbtVuVTIC7r8YAYp-X5JQW46zZAwCYAN0cbxAsId90BOfJEAGBBXBw2eaQ6JYoMpEtRV9eDa0f2KHB9trJNyGoPmfBe6BpDceMnzEJQ3cQa_msy7sTMbifFs268bIROlqEFNL1qubsGTXwDheO9D0hKluV4xWsTJd-80dCbRbl_A"/>
+<!-- Visual Asset Preview -->
+<div class="rounded-xl overflow-hidden border border-purple-900/50 bg-[#140624] aspect-[16/10] relative mb-5">
+<img alt="Al Rawi Academy Verified LinkedIn Follower Growth Analytics" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy5f9Dbk0Nu0Wx8iCqvjVLZ5V7-Zv6Ib8Cwl2nnaKsOU7cmT1doYqJcb_mFnP2I76HOYZiwU7au161HBJ3jxI-YKz0kDGf49wHT3Y4HemuwAjxTtvaE7dXSZKi4dEbyqWl_jWtJkJczIgYmPrPccyrPFln7DgcjO4Fb3nYIAXGoJRNHXSPvIr07pG_7ooBd7xkhLIP-pJ2QnvMF-OipwkOeIcLCwsrK_yVVgTMGKOFMCjcWghCSEdL3kw2J49ccjK6jw"/>
 </div>
-<!-- Key Metrics Grid -->
-<div class="grid grid-cols-3 gap-2 bg-[#120520] border border-purple-900/40 p-3 rounded-xl text-center">
-<div class="p-1">
-<div class="text-base sm:text-lg font-black text-pink-400">2,400+</div>
-<div class="text-[10px] sm:text-[11px] text-slate-400 uppercase tracking-tight">Engagements</div>
+<!-- Verified Results Grid -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-2 bg-[#0e0419] border border-purple-900/40 p-3 rounded-xl text-center">
+<div>
+<div class="text-sm sm:text-base font-black text-pink-400">300%</div>
+<div class="text-[10px] text-slate-400">Reach Increase</div>
 </div>
-<div class="p-1 border-x border-purple-900/50">
-<div class="text-base sm:text-lg font-black text-pink-400">15+</div>
-<div class="text-[10px] sm:text-[11px] text-slate-400 uppercase tracking-tight">Viral Posts</div>
+<div class="border-l border-purple-900/40">
+<div class="text-sm sm:text-base font-black text-pink-400">2,400+</div>
+<div class="text-[10px] text-slate-400">Engagements</div>
 </div>
-<div class="p-1">
-<div class="text-base sm:text-lg font-black text-pink-400">300%+</div>
-<div class="text-[10px] sm:text-[11px] text-slate-400 uppercase tracking-tight">Reach Boost</div>
+<div class="border-t sm:border-t-0 sm:border-l border-purple-900/40 pt-1 sm:pt-0">
+<div class="text-sm sm:text-base font-black text-pink-400">15+</div>
+<div class="text-[10px] text-slate-400">Top Posts</div>
+</div>
+<div class="border-t sm:border-t-0 sm:border-l border-purple-900/40 pt-1 sm:pt-0">
+<div class="text-sm sm:text-base font-black text-pink-400">976</div>
+<div class="text-[10px] text-slate-400">Organic Follows</div>
 </div>
 </div>
 </div>
-<!-- Footer Action -->
-<div class="px-6 sm:px-7 py-4 border-t border-purple-900/40 flex items-center justify-between bg-purple-950/20">
-<span class="text-xs text-slate-400">Comprehensive Breakdown:</span>
-<button class="open-modal-btn text-xs font-bold text-pink-400 hover:text-pink-300 flex items-center gap-1.5 group-hover:translate-x-1 transition-transform" data-project-id="rawi">
+<!-- Footer Trigger -->
+<div class="px-6 sm:px-7 py-3.5 border-t border-purple-900/40 flex items-center justify-between bg-purple-950/20">
+<span class="text-xs text-slate-400">Full 7-Step Case Study</span>
+<span class="open-modal-btn text-xs font-bold text-pink-400 group-hover:text-pink-300 flex items-center gap-1.5">
 <span>View Case Study</span>
-<span class="text-base">→</span>
-</button>
+<span class="text-base group-hover:translate-x-1 transition-transform">→</span>
+</span>
 </div>
 </div>
-<!-- Card 2: Ruwai Al-Sharqawi -->
-<div class="project-card glass-card rounded-2xl border border-purple-900/60 overflow-hidden hover:border-pink-500/60 transition-all duration-300 flex flex-col justify-between group shadow-xl" data-categories="creative-design ai-prompt" data-project-id="sharqawi">
+<!-- Project 2: Ruwai / Al-Sharkawy -->
+<div class="project-card glass-card rounded-2xl overflow-hidden transition-all duration-300 flex flex-col justify-between group shadow-xl hover:-translate-y-1 cursor-pointer" data-categories="creative-direction" data-project-id="sharqawi">
 <div class="p-6 sm:p-7">
-<!-- Top Row: Title & Badge -->
 <div class="flex items-start justify-between gap-4 mb-3">
 <div>
 <div class="flex items-center gap-2">
-<span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
-<h3 class="text-xl font-bold text-white group-hover:text-pink-300 transition-colors">Ruwai Al-Sharqawi</h3>
+<span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
+<h3 class="text-xl font-bold text-white group-hover:text-pink-300 transition-colors">Ruwai / Al-Sharkawy</h3>
 </div>
 <div class="text-xs text-pink-400 font-medium mt-0.5">Premium Furniture Accessories</div>
-<div class="text-[11px] text-slate-500 mt-0.5">Jan 2026 - Present</div>
 </div>
-<span class="text-[11px] font-semibold text-pink-300 bg-pink-950/60 border border-pink-700/50 px-3 py-1 rounded-full whitespace-nowrap">
-                  Content Creator
-                </span>
+<span class="text-[11px] font-semibold text-pink-300 bg-pink-950/60 border border-pink-700/50 px-2.5 py-1 rounded-full whitespace-nowrap">
+                Creative Direction
+              </span>
 </div>
-<!-- Overview Text -->
-<div class="text-xs sm:text-sm text-slate-300 space-y-2 mb-5">
-<p><strong class="text-slate-200">Overview:</strong> Leading complete content creation for a luxury furniture accessories brand targeting premium Egyptian and Gulf consumers.</p>
-<p><strong class="text-slate-200">Challenge:</strong> Differentiate through craftsmanship &amp; lifestyle storytelling in a competitive luxury market.</p>
+<!-- Role Tags -->
+<div class="flex flex-wrap gap-1.5 mb-4">
+<span class="text-[10px] bg-purple-950/80 text-slate-300 px-2 py-0.5 rounded border border-purple-800/40">Creative Direction</span>
+<span class="text-[10px] bg-purple-950/80 text-slate-300 px-2 py-0.5 rounded border border-purple-800/40">Copywriting</span>
+<span class="text-[10px] bg-purple-950/80 text-slate-300 px-2 py-0.5 rounded border border-purple-800/40">AI-assisted Production</span>
+<span class="text-[10px] bg-purple-950/80 text-slate-300 px-2 py-0.5 rounded border border-purple-800/40">Visual Design</span>
 </div>
-<!-- Media Preview -->
-<div class="rounded-xl overflow-hidden border border-purple-900/50 bg-[#160a24] aspect-[16/10] relative mb-6">
-<img alt="Ruwai Al-Sharqawi Luxury Door Handle Creative Design" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDv3R8k2dvBEvLsw2psVndQNzxS-7YqnSwdRLuseAKylKDs0hVuiMELMiIt2mGURNb5oCFCW2CdnYxjWcHkXS28EnZ-I6pzOrBkS6tcW3qITiEvkNKRjmAnKZlqEAvLV7Soh4VjVYHhh6emNX8QnVo-fpe7qG8sr3YHMvASGlynP6CDX7_Ne7R2TEiFhh4CcbdPL4UDM50dtjk6a6auigRZvuGohsUVaSrGrVt3kzjSsHv6gTIUqw1Hp-g66-qUDsvudg"/>
+<!-- Visual Asset Preview -->
+<div class="rounded-xl overflow-hidden border border-purple-900/50 bg-[#140624] aspect-[16/10] relative mb-5">
+<img alt="Ruwai Al-Sharkawy Luxury Door Handle Creative Design Asset" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCArmLd1M1aB_DcO3pil3Ao0Ua4TdowaGG_WGpUDzeMON1bUBDQvhx6WWKiiq5lx7AxO2bjIXuajEFNWChTJqErxisyHG4D_RTFr9RUG0Ff0H-fgx4hsHz0H_oNNaWZ4gABAcm4dRn57jXOY8R3_VCBJWoHayfTO9C-OMWAlVSVtGk4QZQodVuJSQYZEyWxeGSQ5tVkzk3o01ExSnAJgA37F3Z2r_uxYz5C407O0fHiBKASFCHOdjQb4vpmBn-aPwLAQ"/>
 </div>
-<!-- Key Metrics Grid -->
-<div class="grid grid-cols-3 gap-2 bg-[#120520] border border-purple-900/40 p-3 rounded-xl text-center">
-<div class="p-1">
-<div class="text-base sm:text-lg font-black text-pink-400">45,000+</div>
-<div class="text-[10px] sm:text-[11px] text-slate-400 uppercase tracking-tight">Impressions</div>
+<!-- Verified Results Grid -->
+<div class="grid grid-cols-3 gap-2 bg-[#0e0419] border border-purple-900/40 p-3 rounded-xl text-center">
+<div>
+<div class="text-sm sm:text-base font-black text-pink-400">45,000+</div>
+<div class="text-[10px] text-slate-400">Impressions</div>
 </div>
-<div class="p-1 border-x border-purple-900/50">
-<div class="text-base sm:text-lg font-black text-pink-400">8,500+</div>
-<div class="text-[10px] sm:text-[11px] text-slate-400 uppercase tracking-tight">Reach</div>
+<div class="border-x border-purple-900/40">
+<div class="text-sm sm:text-base font-black text-pink-400">8,500+</div>
+<div class="text-[10px] text-slate-400">Unique Reach</div>
 </div>
-<div class="p-1">
-<div class="text-base sm:text-lg font-black text-pink-400">100%</div>
-<div class="text-[10px] sm:text-[11px] text-slate-400 uppercase tracking-tight">Organic</div>
+<div>
+<div class="text-sm sm:text-base font-black text-pink-400">4.2%</div>
+<div class="text-[10px] text-slate-400">Engage Rate</div>
 </div>
 </div>
 </div>
-<!-- Footer Action -->
-<div class="px-6 sm:px-7 py-4 border-t border-purple-900/40 flex items-center justify-between bg-purple-950/20">
-<span class="text-xs text-slate-400">Comprehensive Breakdown:</span>
-<button class="open-modal-btn text-xs font-bold text-pink-400 hover:text-pink-300 flex items-center gap-1.5 group-hover:translate-x-1 transition-transform" data-project-id="sharqawi">
+<!-- Footer Trigger -->
+<div class="px-6 sm:px-7 py-3.5 border-t border-purple-900/40 flex items-center justify-between bg-purple-950/20">
+<span class="text-xs text-slate-400">Full 7-Step Case Study</span>
+<span class="open-modal-btn text-xs font-bold text-pink-400 group-hover:text-pink-300 flex items-center gap-1.5">
 <span>View Case Study</span>
-<span class="text-base">→</span>
-</button>
+<span class="text-base group-hover:translate-x-1 transition-transform">→</span>
+</span>
 </div>
 </div>
-<!-- Card 3: RealtyPlus -->
-<div class="project-card glass-card rounded-2xl border border-purple-900/60 overflow-hidden hover:border-pink-500/60 transition-all duration-300 flex flex-col justify-between group shadow-xl" data-categories="content-strategy creative-design" data-project-id="realtyplus">
+<!-- Project 3: RealtyPlus -->
+<div class="project-card glass-card rounded-2xl overflow-hidden transition-all duration-300 flex flex-col justify-between group shadow-xl hover:-translate-y-1 cursor-pointer" data-categories="content-strategy" data-project-id="realtyplus">
 <div class="p-6 sm:p-7">
-<!-- Top Row: Title & Badge -->
 <div class="flex items-start justify-between gap-4 mb-3">
 <div>
 <div class="flex items-center gap-2">
 <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
 <h3 class="text-xl font-bold text-white group-hover:text-pink-300 transition-colors">RealtyPlus</h3>
 </div>
-<div class="text-xs text-pink-400 font-medium mt-0.5">Legal &amp; Investment Consulting</div>
-<div class="text-[11px] text-slate-500 mt-0.5">May 2026 - Present</div>
+<div class="text-xs text-pink-400 font-medium mt-0.5">Legal &amp; Real Estate Consulting</div>
 </div>
-<span class="text-[11px] font-semibold text-pink-300 bg-pink-950/60 border border-pink-700/50 px-3 py-1 rounded-full whitespace-nowrap">
-                  Content Specialist
-                </span>
+<span class="text-[11px] font-semibold text-pink-300 bg-pink-950/60 border border-pink-700/50 px-2.5 py-1 rounded-full whitespace-nowrap">
+                Content Strategy
+              </span>
 </div>
-<!-- Overview Text -->
-<div class="text-xs sm:text-sm text-slate-300 space-y-2 mb-5">
-<p><strong class="text-slate-200">Overview:</strong> Building LinkedIn presence for a legal &amp; investment consulting firm serving Egyptian &amp; Saudi Arabian markets.</p>
-<p><strong class="text-slate-200">Challenge:</strong> Communicate legal credentials &amp; complex investment topics accessibly to build executive trust.</p>
+<!-- Role Tags -->
+<div class="flex flex-wrap gap-1.5 mb-4">
+<span class="text-[10px] bg-purple-950/80 text-slate-300 px-2 py-0.5 rounded border border-purple-800/40">Content Strategy</span>
+<span class="text-[10px] bg-purple-950/80 text-slate-300 px-2 py-0.5 rounded border border-purple-800/40">Brand Messaging</span>
+<span class="text-[10px] bg-purple-950/80 text-slate-300 px-2 py-0.5 rounded border border-purple-800/40">B2B Visual Content</span>
 </div>
-<!-- Media Preview -->
-<div class="rounded-xl overflow-hidden border border-purple-900/50 bg-[#160a24] aspect-[16/10] relative mb-6">
-<img alt="RealtyPlus Eid Mubarak and Institutional Investment Creative" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAn2uRn8ciGIyjHHcg9pnCReKZU409Lc_XPo_xsCu5jvMJZHLW2BZ3KLlLIbbf8qjqBb_WoxueXN8wnp_rRqu-jYDJ5nslbIES7gIj0CwosPkUymbM6j8K9gtzXPMG3f8QzxAvnsm-pSC4SN-QfKLpachJsy_6bCtQdeOhI0-OAEsD6v4EbGQiPnlLyDFxJdnvtW3dJZFZ8ygZB5mbGpcTlvdXNb8Mg4E5EjjGYxp06-DfTTAc-rCnGlJ_mzIA-OW9q7A"/>
+<!-- Visual Asset Preview -->
+<div class="rounded-xl overflow-hidden border border-purple-900/50 bg-[#140624] aspect-[16/10] relative mb-5">
+<img alt="RealtyPlus Egypt and Saudi Real Estate Consultation Visual" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5GQeRGtrpSV7KJ-Ej6QmMWRPLPZWy9fY5a1hnNhzSJBwPl0PLuUwgKonSQ1N0Fc62EdK8vvSCc1LdheJcF1uX-yl-6rhk26ma9rXt1PmV5q0Fmqlk0JdzLr4ax2Ii-FdEJ7-h40z7SpxBxjgBoQwcZaLNcf4ObLQ0rQfm-DvBYaxWmyJyA3R6tQ6wjQIQ66potmeWnIcDGwf_H3q5sfZIoucUJbjXMpUocYpKfeVsaE2dIw4wxHAmsgw4YgXMKhY3Hw"/>
 </div>
-<!-- Key Metrics Grid -->
-<div class="grid grid-cols-3 gap-2 bg-[#120520] border border-purple-900/40 p-3 rounded-xl text-center">
-<div class="p-1">
-<div class="text-base sm:text-lg font-black text-pink-400">50+</div>
-<div class="text-[10px] sm:text-[11px] text-slate-400 uppercase tracking-tight">Legal Posts</div>
+<!-- Verified Results Grid -->
+<div class="grid grid-cols-2 gap-2 bg-[#0e0419] border border-purple-900/40 p-3 rounded-xl text-center">
+<div>
+<div class="text-sm sm:text-base font-black text-pink-400">50+</div>
+<div class="text-[10px] text-slate-400">Strategic Posts</div>
 </div>
-<div class="p-1 border-x border-purple-900/50">
-<div class="text-base sm:text-lg font-black text-pink-400">Top Viral</div>
-<div class="text-[10px] sm:text-[11px] text-slate-400 uppercase tracking-tight">Series Rank</div>
-</div>
-<div class="p-1">
-<div class="text-base sm:text-lg font-black text-pink-400">High Trust</div>
-<div class="text-[10px] sm:text-[11px] text-slate-400 uppercase tracking-tight">Authority</div>
+<div class="border-l border-purple-900/40">
+<div class="text-sm sm:text-base font-black text-pink-400">Outcome</div>
+<div class="text-[10px] text-slate-400">High-Trust B2B Authority</div>
 </div>
 </div>
 </div>
-<!-- Footer Action -->
-<div class="px-6 sm:px-7 py-4 border-t border-purple-900/40 flex items-center justify-between bg-purple-950/20">
-<span class="text-xs text-slate-400">Comprehensive Breakdown:</span>
-<button class="open-modal-btn text-xs font-bold text-pink-400 hover:text-pink-300 flex items-center gap-1.5 group-hover:translate-x-1 transition-transform" data-project-id="realtyplus">
+<!-- Footer Trigger -->
+<div class="px-6 sm:px-7 py-3.5 border-t border-purple-900/40 flex items-center justify-between bg-purple-950/20">
+<span class="text-xs text-slate-400">Full 7-Step Case Study</span>
+<span class="open-modal-btn text-xs font-bold text-pink-400 group-hover:text-pink-300 flex items-center gap-1.5">
 <span>View Case Study</span>
-<span class="text-base">→</span>
-</button>
+<span class="text-base group-hover:translate-x-1 transition-transform">→</span>
+</span>
 </div>
 </div>
-<!-- Card 4: Hesham Fouad -->
-<div class="project-card glass-card rounded-2xl border border-purple-900/60 overflow-hidden hover:border-pink-500/60 transition-all duration-300 flex flex-col justify-between group shadow-xl" data-categories="personal-branding content-strategy" data-project-id="fouad">
+<!-- Project 4: Hesham Fouad -->
+<div class="project-card glass-card rounded-2xl overflow-hidden transition-all duration-300 flex flex-col justify-between group shadow-xl hover:-translate-y-1 cursor-pointer" data-categories="personal-branding content-strategy" data-project-id="fouad">
 <div class="p-6 sm:p-7">
-<!-- Top Row: Title & Badge -->
 <div class="flex items-start justify-between gap-4 mb-3">
 <div>
 <div class="flex items-center gap-2">
 <span class="w-2.5 h-2.5 rounded-full bg-cyan-400"></span>
 <h3 class="text-xl font-bold text-white group-hover:text-pink-300 transition-colors">Hesham Fouad</h3>
 </div>
-<div class="text-xs text-pink-400 font-medium mt-0.5">Personal Branding Architecture</div>
-<div class="text-[11px] text-slate-500 mt-0.5">2026 - Present</div>
+<div class="text-xs text-pink-400 font-medium mt-0.5">Executive Personal Branding</div>
 </div>
-<span class="text-[11px] font-semibold text-pink-300 bg-pink-950/60 border border-pink-700/50 px-3 py-1 rounded-full whitespace-nowrap">
-                  Personal Branding
-                </span>
+<span class="text-[11px] font-semibold text-pink-300 bg-pink-950/60 border border-pink-700/50 px-2.5 py-1 rounded-full whitespace-nowrap">
+                Personal Branding
+              </span>
 </div>
-<!-- Overview Text -->
-<div class="text-xs sm:text-sm text-slate-300 space-y-2 mb-5">
-<p><strong class="text-slate-200">Overview:</strong> Architected a complete personal brand from zero for a Gulf-based executive into an authoritative thought leader.</p>
-<p><strong class="text-slate-200">Impact:</strong> 300% Inquiry Quality Increase and high-value speaking engagements.</p>
+<!-- Role Tags -->
+<div class="flex flex-wrap gap-1.5 mb-4">
+<span class="text-[10px] bg-purple-950/80 text-slate-300 px-2 py-0.5 rounded border border-purple-800/40">Personal Brand Strategy</span>
+<span class="text-[10px] bg-purple-950/80 text-slate-300 px-2 py-0.5 rounded border border-purple-800/40">Thought Leadership</span>
+<span class="text-[10px] bg-purple-950/80 text-slate-300 px-2 py-0.5 rounded border border-purple-800/40">Profile Content Direction</span>
 </div>
-<!-- Media Preview -->
-<div class="rounded-xl overflow-hidden border border-purple-900/50 bg-[#160a24] aspect-[16/10] relative mb-6">
-<img alt="Hesham Fouad Arabic financial thought leadership campaign" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuXL1sE77HQ-ZXr_Zuo5se6KkuBHsr_ewWZUFe2NioVbeRIQYRNXMDUjGav34GdTKBLAILzyHu3W962CPlNR_PAFf26eteWSuwqMStouFnW2NJabLcLeoInJPxFNkc3pCSM3jKxJAX64Pd7sBuJzDAwdo_noludNuNifSZMREr7g737-DdCBS4Zz4QqQz-k_8nuuMckeIHur4-azFXNYvSQU23WBzt2OU7XInnfuCFn-r7VpQ0LgLogQGvqgaq-GggsQ"/>
+<!-- Visual Asset Preview -->
+<div class="rounded-xl overflow-hidden border border-purple-900/50 bg-[#140624] aspect-[16/10] relative mb-5">
+<img alt="Hesham Fouad Financial Leadership Content Visual" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4e80EBWm1tOXl1JkFTAhpjK1e0ZlFowMB8aKTmusRIFrugfWmZyZ1Prgpi-_k_B0nVrzB0gxBeHX-7IyGC125Oh9guPmsmDLFYsRShB-5MTqoER6ONqj5D4jNNW_-iBQ3PjnaWqSeXh3kDBkQdIoN_eYFV1ocV_aau_ZwhcuZSMfTpCyf6WfImc1sidUmFTyib6S2k34_6yzH5xi-EQq1RTzkILbmzYKcxZrcmes1VXtHX0he_Zgabz76ySTIgfezLw"/>
 </div>
-<!-- Key Metrics Grid -->
-<div class="grid grid-cols-3 gap-2 bg-[#120520] border border-purple-900/40 p-3 rounded-xl text-center">
-<div class="p-1">
-<div class="text-base sm:text-lg font-black text-pink-400">+300%</div>
-<div class="text-[10px] sm:text-[11px] text-slate-400 uppercase tracking-tight">Inquiry Quality</div>
+<!-- Verified Results Grid -->
+<div class="grid grid-cols-3 gap-2 bg-[#0e0419] border border-purple-900/40 p-3 rounded-xl text-center">
+<div>
+<div class="text-sm sm:text-base font-black text-pink-400">+300%</div>
+<div class="text-[10px] text-slate-400">Inquiry Quality</div>
 </div>
-<div class="p-1 border-x border-purple-900/50">
-<div class="text-base sm:text-lg font-black text-pink-400">5.2x</div>
-<div class="text-[10px] sm:text-[11px] text-slate-400 uppercase tracking-tight">Follower Growth</div>
+<div class="border-x border-purple-900/40">
+<div class="text-sm sm:text-base font-black text-pink-400">5.2×</div>
+<div class="text-[10px] text-slate-400">Follower Growth</div>
 </div>
-<div class="p-1">
-<div class="text-base sm:text-lg font-black text-pink-400">4</div>
-<div class="text-[10px] sm:text-[11px] text-slate-400 uppercase tracking-tight">Keynote Invites</div>
+<div>
+<div class="text-sm sm:text-base font-black text-pink-400">4</div>
+<div class="text-[10px] text-slate-400">Keynote Invites</div>
 </div>
 </div>
 </div>
-<!-- Footer Action -->
-<div class="px-6 sm:px-7 py-4 border-t border-purple-900/40 flex items-center justify-between bg-purple-950/20">
-<span class="text-xs text-slate-400">Comprehensive Breakdown:</span>
-<button class="open-modal-btn text-xs font-bold text-pink-400 hover:text-pink-300 flex items-center gap-1.5 group-hover:translate-x-1 transition-transform" data-project-id="fouad">
+<!-- Footer Trigger -->
+<div class="px-6 sm:px-7 py-3.5 border-t border-purple-900/40 flex items-center justify-between bg-purple-950/20">
+<span class="text-xs text-slate-400">Full 7-Step Case Study</span>
+<span class="open-modal-btn text-xs font-bold text-pink-400 group-hover:text-pink-300 flex items-center gap-1.5">
 <span>View Case Study</span>
-<span class="text-base">→</span>
-</button>
+<span class="text-base group-hover:translate-x-1 transition-transform">→</span>
+</span>
 </div>
 </div>
 </div>
 </div>
 </section>
-<!-- END: FeaturedWorkSection -->
-<!-- BEGIN: ServicesSection -->
-<section class="py-24 bg-[#0e0419] relative border-t border-purple-950/40" data-purpose="services-section" id="services">
+<!-- END: 2. SelectedWorkSection -->
+<!-- BEGIN: 3. AboutSection -->
+<section class="py-24 bg-[#0a0314] relative border-t border-purple-950/40" data-purpose="about-section" id="about">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+<!-- Left: Copy & Differentiator -->
+<div class="lg:col-span-7 space-y-6">
+<div class="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-pink-400 bg-pink-950/40 border border-pink-700/40 px-3 py-1 rounded-full">
+            Understand → Strategize → Create → Execute → Optimize
+          </div>
+<h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight">
+            Strategy Meets Creativity
+          </h2>
+<p class="text-slate-300 leading-relaxed text-base sm:text-lg">
+            My background in healthcare taught me to think analytically, while my work in content and design taught me to communicate creatively. Today, I combine both perspectives to build content systems, visual identities, and creative experiences that are driven by purpose — not just aesthetics.
+          </p>
+<!-- Philosophy quote box -->
+<div class="glass-card rounded-2xl p-6 border-l-4 border-l-pink-500 space-y-2">
+<p class="text-lg sm:text-xl font-bold text-white tracking-tight italic">
+              “I don't start with the design. I start with the problem.”
+            </p>
+<p class="text-xs sm:text-sm text-slate-400 font-normal">
+              Every format, message, visual hierarchy, and post angle is derived from a clear market insight and measurable goal.
+            </p>
+</div>
+</div>
+<!-- Right: Portrait Column -->
+<div class="lg:col-span-5 flex flex-col items-center justify-center">
+<div class="relative group">
+<!-- Glowing circle portrait -->
+<div class="w-64 h-64 sm:w-72 sm:h-72 rounded-full p-2 glowing-portrait-ring bg-gradient-to-tr from-pink-600 via-fuchsia-600 to-purple-600 transition-all duration-500">
+<img alt="Portrait of Yusuf Khairaldeen" class="w-full h-full object-cover rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEqMMSRtJfopGHnoO8BfYvl19RVvrd-LkJrMLAXBn8ixE1VdmD2bKTYoskG4f3-HoGKbXakq1WiclfBkMvlEVnI2gkVG18Ji-EVAGu6eUYV0gqg2NgDwpuXEU6JGF5-T_58F-H1QAzP5c930L_iEWDvueYtI-kG4tC_nlMF8Ke9phUhv84O8vXwGjObtzCBa0ni3pMJ3AoPV8R1nLihRwumx1Hkz01cVNsCBYvlKC1DJQj7FKITTRAHv9XZuA_-FSS8Q"/>
+</div>
+<!-- Bio Meta Card -->
+<div class="mt-6 flex flex-col items-center bg-[#18092a] border border-purple-700/50 py-3 px-6 rounded-2xl shadow-xl text-center">
+<span class="text-sm font-extrabold text-white">Yusuf Khairaldeen</span>
+<span class="text-xs text-pink-400 font-medium">Content Strategist &amp; Creative Designer</span>
+<span class="text-[11px] text-slate-400 mt-0.5">Gulf &amp; Regional Brand Experience</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: 3. AboutSection -->
+<!-- BEGIN: 4. ServicesSection -->
+<section class="py-24 bg-[#06020e] relative border-t border-purple-950/40" data-purpose="services-section" id="services">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 <!-- Section Header -->
 <div class="text-center max-w-3xl mx-auto mb-16">
-<h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight mb-2">My Services</h2>
-<p class="text-pink-400 font-semibold text-sm sm:text-base">Strategic Solutions for Market Differentiation</p>
-<div class="w-16 h-1 bg-pink-500 mx-auto mt-4 rounded-full"></div>
+<div class="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-pink-400 bg-pink-950/40 border border-pink-700/40 px-3 py-1 rounded-full mb-3">
+          Services
+        </div>
+<h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight mb-2">
+          What I Help Brands Do
+        </h2>
+<p class="text-slate-300 text-sm sm:text-base">
+          Three focused service pillars combining strategic clarity and high-caliber execution.
+        </p>
 </div>
-<!-- 4 Services Grid -->
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-<!-- Service 1 -->
-<div class="p-8 rounded-2xl bg-gradient-to-b from-[#1c0a2f] to-[#140624] border border-purple-800/50 hover:border-pink-500/70 transition-all duration-300 shadow-xl group">
-<div class="flex items-center gap-4 mb-4">
-<div class="w-10 h-10 rounded-xl bg-purple-900/60 border border-pink-500/40 text-pink-400 flex items-center justify-center font-black text-lg group-hover:scale-110 transition-transform">
-                1
+<!-- 3 Core Offers -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Service 01: Content Strategy -->
+<div class="glass-card rounded-2xl p-7 flex flex-col justify-between group hover:border-pink-500 transition-all duration-300 shadow-xl">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="text-xs font-bold uppercase tracking-wider text-pink-400">SERVICE 01</span>
+<div class="w-8 h-8 rounded-lg bg-purple-950 border border-purple-700/60 flex items-center justify-center text-pink-400 font-black text-sm">
+                01
               </div>
-<h3 class="text-xl font-bold text-white group-hover:text-pink-300 transition-colors">
-                Content Strategy &amp; Planning
-              </h3>
 </div>
-<p class="text-xs sm:text-sm text-slate-300 mb-4 leading-relaxed">
-              Comprehensive actionable roadmaps that ensure clear messaging and predictable organic reach.
+<h3 class="text-xl font-bold text-white mb-3 group-hover:text-pink-300 transition-colors">
+              Content Strategy
+            </h3>
+<p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6">
+              Research, positioning, content pillars, messaging, planning, and content systems built around clear goals.
             </p>
-<ul class="space-y-2.5 text-xs sm:text-sm text-slate-400">
-<li class="flex items-start gap-2">
+<div class="space-y-2 text-xs text-slate-300">
+<div class="flex items-center gap-2">
 <span class="text-pink-500 font-bold">•</span>
-<span>3-6 month comprehensive roadmap with clear KPI tracking</span>
-</li>
-<li class="flex items-start gap-2">
-<span class="text-pink-500 font-bold">•</span>
-<span>Deep demographic and psychographic audience research</span>
-</li>
-<li class="flex items-start gap-2">
-<span class="text-pink-500 font-bold">•</span>
-<span>Competitor analysis &amp; market positioning gaps</span>
-</li>
-</ul>
+<span>Audience Research &amp; Market Insights</span>
 </div>
-<!-- Service 2 -->
-<div class="p-8 rounded-2xl bg-gradient-to-b from-[#1c0a2f] to-[#140624] border border-purple-800/50 hover:border-pink-500/70 transition-all duration-300 shadow-xl group">
-<div class="flex items-center gap-4 mb-4">
-<div class="w-10 h-10 rounded-xl bg-purple-900/60 border border-pink-500/40 text-pink-400 flex items-center justify-center font-black text-lg group-hover:scale-110 transition-transform">
-                2
+<div class="flex items-center gap-2">
+<span class="text-pink-500 font-bold">•</span>
+<span>Content Strategy &amp; Core Pillars</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-pink-500 font-bold">•</span>
+<span>Brand Messaging Guidelines</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-pink-500 font-bold">•</span>
+<span>Content Planning &amp; Calendars</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-pink-500 font-bold">•</span>
+<span>KPI Direction &amp; Distribution Architecture</span>
+</div>
+</div>
+</div>
+<div class="mt-8 pt-4 border-t border-purple-900/40">
+<a class="text-xs font-bold text-pink-400 hover:text-pink-300 flex items-center gap-1" href="#contact">
+<span>Discuss Content Strategy</span>
+<span>→</span>
+</a>
+</div>
+</div>
+<!-- Service 02: Content & Creative Execution -->
+<div class="glass-card rounded-2xl p-7 flex flex-col justify-between group hover:border-pink-500 transition-all duration-300 shadow-xl">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="text-xs font-bold uppercase tracking-wider text-pink-400">SERVICE 02</span>
+<div class="w-8 h-8 rounded-lg bg-purple-950 border border-purple-700/60 flex items-center justify-center text-pink-400 font-black text-sm">
+                02
               </div>
-<h3 class="text-xl font-bold text-white group-hover:text-pink-300 transition-colors">
-                Content Creation &amp; Execution
-              </h3>
 </div>
-<p class="text-xs sm:text-sm text-slate-300 mb-4 leading-relaxed">
-              Transforming strategic concepts into high-converting digital assets and compelling visual narratives.
+<h3 class="text-xl font-bold text-white mb-3 group-hover:text-pink-300 transition-colors">
+              Content &amp; Creative Execution
+            </h3>
+<p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6">
+              Turning strategy into content people can actually see, understand, and engage with.
             </p>
-<ul class="space-y-2.5 text-xs sm:text-sm text-slate-400">
-<li class="flex items-start gap-2">
+<div class="space-y-2 text-xs text-slate-300">
+<div class="flex items-center gap-2">
 <span class="text-pink-500 font-bold">•</span>
-<span>High-conversion bilingual copywriting (Arabic &amp; English)</span>
-</li>
-<li class="flex items-start gap-2">
-<span class="text-pink-500 font-bold">•</span>
-<span>AI-powered generative graphic visuals &amp; prompt engineering</span>
-</li>
-<li class="flex items-start gap-2">
-<span class="text-pink-500 font-bold">•</span>
-<span>Video scripting, storyboarding &amp; creative direction</span>
-</li>
-</ul>
+<span>Bilingual Copywriting (Arabic &amp; English)</span>
 </div>
-<!-- Service 3 -->
-<div class="p-8 rounded-2xl bg-gradient-to-b from-[#1c0a2f] to-[#140624] border border-purple-800/50 hover:border-pink-500/70 transition-all duration-300 shadow-xl group">
-<div class="flex items-center gap-4 mb-4">
-<div class="w-10 h-10 rounded-xl bg-purple-900/60 border border-pink-500/40 text-pink-400 flex items-center justify-center font-black text-lg group-hover:scale-110 transition-transform">
-                3
+<div class="flex items-center gap-2">
+<span class="text-pink-500 font-bold">•</span>
+<span>Social Media Content Systems</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-pink-500 font-bold">•</span>
+<span>Creative Direction &amp; Graphic Design</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-pink-500 font-bold">•</span>
+<span>AI-assisted Visual Production (as workflow tool)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-pink-500 font-bold">•</span>
+<span>Campaign Concepts &amp; Visual Directions</span>
+</div>
+</div>
+</div>
+<div class="mt-8 pt-4 border-t border-purple-900/40">
+<a class="text-xs font-bold text-pink-400 hover:text-pink-300 flex items-center gap-1" href="#contact">
+<span>Discuss Creative Execution</span>
+<span>→</span>
+</a>
+</div>
+</div>
+<!-- Service 03: Personal & Professional Branding -->
+<div class="glass-card rounded-2xl p-7 flex flex-col justify-between group hover:border-pink-500 transition-all duration-300 shadow-xl">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="text-xs font-bold uppercase tracking-wider text-pink-400">SERVICE 03</span>
+<div class="w-8 h-8 rounded-lg bg-purple-950 border border-purple-700/60 flex items-center justify-center text-pink-400 font-black text-sm">
+                03
               </div>
-<h3 class="text-xl font-bold text-white group-hover:text-pink-300 transition-colors">
-                Brand Identity &amp; Visual Design
-              </h3>
 </div>
-<p class="text-xs sm:text-sm text-slate-300 mb-4 leading-relaxed">
-              Crafting memorable visual identities that stand out in crowded premium markets.
+<h3 class="text-xl font-bold text-white mb-3 group-hover:text-pink-300 transition-colors">
+              Personal &amp; Professional Branding
+            </h3>
+<p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6">
+              Building a consistent professional presence through strategic positioning and purposeful content.
             </p>
-<ul class="space-y-2.5 text-xs sm:text-sm text-slate-400">
-<li class="flex items-start gap-2">
+<div class="space-y-2 text-xs text-slate-300">
+<div class="flex items-center gap-2">
 <span class="text-pink-500 font-bold">•</span>
-<span>Full visual identity creation and cohesive brand architecture</span>
-</li>
-<li class="flex items-start gap-2">
-<span class="text-pink-500 font-bold">•</span>
-<span>Typography pairing &amp; custom color palette development</span>
-</li>
-<li class="flex items-start gap-2">
-<span class="text-pink-500 font-bold">•</span>
-<span>Production-ready digital asset libraries (50+ elements)</span>
-</li>
-</ul>
+<span>LinkedIn Positioning</span>
 </div>
-<!-- Service 4 -->
-<div class="p-8 rounded-2xl bg-gradient-to-b from-[#1c0a2f] to-[#140624] border border-purple-800/50 hover:border-pink-500/70 transition-all duration-300 shadow-xl group">
-<div class="flex items-center gap-4 mb-4">
-<div class="w-10 h-10 rounded-xl bg-purple-900/60 border border-pink-500/40 text-pink-400 flex items-center justify-center font-black text-lg group-hover:scale-110 transition-transform">
-                4
-              </div>
-<h3 class="text-xl font-bold text-white group-hover:text-pink-300 transition-colors">
-                Personal Branding Architecture
-              </h3>
+<div class="flex items-center gap-2">
+<span class="text-pink-500 font-bold">•</span>
+<span>Personal Brand Strategy &amp; Narrative</span>
 </div>
-<p class="text-xs sm:text-sm text-slate-300 mb-4 leading-relaxed">
-              Establishing thought-leadership presence for founders, medical leaders, and C-level executives.
-            </p>
-<ul class="space-y-2.5 text-xs sm:text-sm text-slate-400">
-<li class="flex items-start gap-2">
+<div class="flex items-center gap-2">
 <span class="text-pink-500 font-bold">•</span>
-<span>Executive brand positioning and thought leadership narrative</span>
-</li>
-<li class="flex items-start gap-2">
+<span>Thought Leadership Content</span>
+</div>
+<div class="flex items-center gap-2">
 <span class="text-pink-500 font-bold">•</span>
-<span>Tailored LinkedIn &amp; X publication strategy</span>
-</li>
-<li class="flex items-start gap-2">
+<span>Visual Content Systems</span>
+</div>
+<div class="flex items-center gap-2">
 <span class="text-pink-500 font-bold">•</span>
-<span>Turnkey Figma templates for effortless recurring output</span>
-</li>
-</ul>
+<span>Profile Content Direction</span>
+</div>
+</div>
+</div>
+<div class="mt-8 pt-4 border-t border-purple-900/40">
+<a class="text-xs font-bold text-pink-400 hover:text-pink-300 flex items-center gap-1" href="#contact">
+<span>Discuss Personal Branding</span>
+<span>→</span>
+</a>
+</div>
 </div>
 </div>
 </div>
 </section>
-<!-- END: ServicesSection -->
-<!-- BEGIN: ContactSection -->
-<section class="py-24 bg-[#140624] relative overflow-hidden" data-purpose="contact-section" id="contact">
-<!-- Glow background -->
-<div class="absolute bottom-0 right-1/4 w-96 h-96 bg-pink-600/15 rounded-full blur-3xl pointer-events-none"></div>
+<!-- END: 4. ServicesSection -->
+<!-- BEGIN: 5. HowIWorkSection (Process) -->
+<section class="py-24 bg-[#0a0314] relative border-t border-purple-950/40" data-purpose="process-section" id="process">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<!-- Header -->
+<!-- Section Header -->
 <div class="text-center max-w-3xl mx-auto mb-16">
-<h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight mb-2">Let's Work Together</h2>
-<div class="w-16 h-1 bg-pink-500 mx-auto my-3 rounded-full"></div>
-<p class="text-xl sm:text-2xl font-bold text-slate-100">Ready to build something amazing?</p>
-<p class="text-pink-400 font-medium text-sm sm:text-base mt-1">Let me show you what's possible for your brand.</p>
+<div class="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-pink-400 bg-pink-950/40 border border-pink-700/40 px-3 py-1 rounded-full mb-3">
+          Process
+        </div>
+<h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight mb-3">
+          How I Work
+        </h2>
+<p class="text-slate-300 text-sm sm:text-base">
+          A disciplined 4-step framework turning business goals into enduring creative systems.
+        </p>
+</div>
+<!-- 4-Step Cards Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Step 1 -->
+<div class="glass-card p-6 sm:p-7 rounded-2xl relative group hover:border-pink-500/60 transition-all flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-fuchsia-400">01</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-slate-400 px-2 py-0.5 rounded bg-purple-950 border border-purple-800">Discovery</span>
+</div>
+<h3 class="text-xl font-bold text-white mb-2 group-hover:text-pink-300 transition-colors">Understand</h3>
+<p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Research the brand, audience, market dynamics, and underlying problem.
+            </p>
+</div>
+<div class="mt-6 pt-4 border-t border-purple-900/40 text-[11px] text-pink-400/90 font-medium">
+            Insight &amp; Audience Research
+          </div>
+</div>
+<!-- Step 2 -->
+<div class="glass-card p-6 sm:p-7 rounded-2xl relative group hover:border-pink-500/60 transition-all flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-fuchsia-400">02</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-slate-400 px-2 py-0.5 rounded bg-purple-950 border border-purple-800">Direction</span>
+</div>
+<h3 class="text-xl font-bold text-white mb-2 group-hover:text-pink-300 transition-colors">Strategize</h3>
+<p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Define positioning, core messaging pillars, tone of voice, and creative priorities.
+            </p>
+</div>
+<div class="mt-6 pt-4 border-t border-purple-900/40 text-[11px] text-pink-400/90 font-medium">
+            Roadmap &amp; Core Pillars
+          </div>
+</div>
+<!-- Step 3 -->
+<div class="glass-card p-6 sm:p-7 rounded-2xl relative group hover:border-pink-500/60 transition-all flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-fuchsia-400">03</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-slate-400 px-2 py-0.5 rounded bg-purple-950 border border-purple-800">Production</span>
+</div>
+<h3 class="text-xl font-bold text-white mb-2 group-hover:text-pink-300 transition-colors">Create</h3>
+<p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Turn strategic directions into content, bilingual copy, visual identities, and brand assets.
+            </p>
+</div>
+<div class="mt-6 pt-4 border-t border-purple-900/40 text-[11px] text-pink-400/90 font-medium">
+            Design, Copy &amp; Assets
+          </div>
+</div>
+<!-- Step 4 -->
+<div class="glass-card p-6 sm:p-7 rounded-2xl relative group hover:border-pink-500/60 transition-all flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-fuchsia-400">04</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-slate-400 px-2 py-0.5 rounded bg-purple-950 border border-purple-800">Iteration</span>
+</div>
+<h3 class="text-xl font-bold text-white mb-2 group-hover:text-pink-300 transition-colors">Optimize</h3>
+<p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Review performance, identify what works, and refine the system for sustainable growth.
+            </p>
+</div>
+<div class="mt-6 pt-4 border-t border-purple-900/40 text-[11px] text-pink-400/90 font-medium">
+            Refinement &amp; Sustainable Growth
+          </div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: 5. HowIWorkSection (Process) -->
+<!-- BEGIN: 6. CapabilitiesSection -->
+<section class="py-20 bg-[#06020e] relative border-t border-purple-950/40" data-purpose="capabilities-section" id="capabilities">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- Section Header -->
+<div class="text-center max-w-3xl mx-auto mb-14">
+<div class="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-pink-400 bg-pink-950/40 border border-pink-700/40 px-3 py-1 rounded-full mb-3">
+          Capabilities
+        </div>
+<h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight mb-3">
+          Categorized Skills &amp; Stack
+        </h2>
+<p class="text-slate-300 text-sm sm:text-base">
+          Structured competencies across analytical planning, visual design, and platform ecosystems.
+        </p>
+</div>
+<!-- Categorized Capabilities Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+<!-- Category 1: Strategy -->
+<div class="glass-card rounded-2xl p-7 border-t-2 border-t-pink-500">
+<div class="flex items-center gap-3 mb-5">
+<div class="w-9 h-9 rounded-xl bg-pink-950/80 border border-pink-700/50 flex items-center justify-center text-pink-400 font-bold text-sm">
+              01
+            </div>
+<h3 class="text-lg font-bold text-white">Strategy</h3>
+</div>
+<ul class="space-y-3 text-sm text-slate-300">
+<li class="flex items-center gap-2.5">
+<span class="w-1.5 h-1.5 rounded-full bg-pink-400"></span>
+<span>Content Strategy</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="w-1.5 h-1.5 rounded-full bg-pink-400"></span>
+<span>Audience Research</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="w-1.5 h-1.5 rounded-full bg-pink-400"></span>
+<span>Positioning</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="w-1.5 h-1.5 rounded-full bg-pink-400"></span>
+<span>Content Planning &amp; Architecture</span>
+</li>
+</ul>
+</div>
+<!-- Category 2: Creative -->
+<div class="glass-card rounded-2xl p-7 border-t-2 border-t-fuchsia-500">
+<div class="flex items-center gap-3 mb-5">
+<div class="w-9 h-9 rounded-xl bg-fuchsia-950/80 border border-fuchsia-700/50 flex items-center justify-center text-fuchsia-400 font-bold text-sm">
+              02
+            </div>
+<h3 class="text-lg font-bold text-white">Creative</h3>
+</div>
+<ul class="space-y-3 text-sm text-slate-300">
+<li class="flex items-center gap-2.5">
+<span class="w-1.5 h-1.5 rounded-full bg-fuchsia-400"></span>
+<span>Figma</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="w-1.5 h-1.5 rounded-full bg-fuchsia-400"></span>
+<span>Adobe Creative Cloud</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="w-1.5 h-1.5 rounded-full bg-fuchsia-400"></span>
+<span>Visual Direction</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="w-1.5 h-1.5 rounded-full bg-fuchsia-400"></span>
+<span>AI-assisted Creative Production (Midjourney/Claude)</span>
+</li>
+</ul>
+</div>
+<!-- Category 3: Platforms -->
+<div class="glass-card rounded-2xl p-7 border-t-2 border-t-purple-500">
+<div class="flex items-center gap-3 mb-5">
+<div class="w-9 h-9 rounded-xl bg-purple-950/80 border border-purple-700/50 flex items-center justify-center text-purple-400 font-bold text-sm">
+              03
+            </div>
+<h3 class="text-lg font-bold text-white">Platforms</h3>
+</div>
+<ul class="space-y-3 text-sm text-slate-300">
+<li class="flex items-center gap-2.5">
+<span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+<span>LinkedIn Ecosystem</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+<span>Cross-Platform Social Media</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+<span>Bilingual Visual Systems</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Confident Guiding Principles Proof Banner (No placeholders) -->
+<div class="glass-card rounded-2xl p-8 sm:p-10 border border-purple-800/40 relative overflow-hidden">
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+<div class="space-y-2 max-w-2xl">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-950/80 border border-purple-700/60 text-[11px] font-semibold text-pink-400">
+<span>What I Focus On • Guiding Principles</span>
+</div>
+<h3 class="text-xl sm:text-2xl font-bold text-white">Analytical Rigor, Purposeful Aesthetics, Strategic Clarity</h3>
+<p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Every deliverable is crafted to solve a concrete business problem, establish unmistakable market presence, and maintain authentic alignment across language and visual execution.
+            </p>
+</div>
+<a class="btn-ripple shrink-0 px-6 py-3.5 rounded-xl bg-[#190831] hover:bg-[#280c4f] border border-pink-500/50 text-white font-bold text-xs uppercase tracking-wider transition-all" href="#contact">
+            Start a Project →
+          </a>
+</div>
+</div>
+</div>
+</section>
+<!-- END: 6. CapabilitiesSection -->
+<!-- BEGIN: 7. ContactSection -->
+<section class="py-24 bg-[#0a0314] relative overflow-hidden border-t border-purple-950/50" data-purpose="contact-section" id="contact">
+<div class="absolute bottom-0 right-1/4 w-96 h-96 bg-pink-600/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- Section Header -->
+<div class="text-center max-w-3xl mx-auto mb-16">
+<div class="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-pink-400 bg-pink-950/40 border border-pink-700/40 px-3 py-1 rounded-full mb-3">
+          Get in Touch
+        </div>
+<h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight mb-3">
+          Have a Project in Mind?
+        </h2>
+<p class="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+          Tell me what you’re building, what you’re trying to achieve, and where you need help. I’ll help you turn it into a clear strategic and creative direction.
+        </p>
 </div>
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-<!-- Left Column: Direct Contact Channels -->
+<!-- Left Column: Direct Verified Channels -->
 <div class="lg:col-span-5 space-y-4">
 <span class="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-2">
-              DIRECT CONTACT CHANNELS
-            </span>
-<!-- WhatsApp Card -->
-<div class="p-4 rounded-xl bg-[#1d0a32] border border-purple-800/50 flex items-center justify-between group hover:border-pink-500/50 transition-colors">
-<div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded-lg bg-emerald-950/80 border border-emerald-500/40 text-emerald-400 flex items-center justify-center">
-<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"></path></svg>
-</div>
-<div>
-<div class="text-[11px] text-slate-400">WhatsApp Direct</div>
-<div class="text-sm font-semibold text-white" id="phone-text">+20 10 91189532</div>
-</div>
-</div>
-<button aria-label="Copy phone number" class="copy-btn text-xs font-semibold px-3 py-1.5 rounded-lg bg-purple-950 border border-purple-700/60 text-slate-300 hover:text-white hover:border-pink-500 transition-colors flex items-center gap-1" data-copy-target="phone-text">
-<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-<span class="copy-label">Copy</span>
-</button>
-</div>
-<!-- Email Card -->
-<div class="p-4 rounded-xl bg-[#1d0a32] border border-purple-800/50 flex items-center justify-between group hover:border-pink-500/50 transition-colors">
+            Direct Contact Channels
+          </span>
+<!-- Email Card with Copy -->
+<div class="p-4 rounded-xl glass-card flex items-center justify-between group transition-colors">
 <div class="flex items-center gap-3 overflow-hidden">
 <div class="w-10 h-10 rounded-lg bg-pink-950/80 border border-pink-500/40 text-pink-400 flex items-center justify-center shrink-0">
 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
 </div>
 <div class="truncate">
 <div class="text-[11px] text-slate-400">Email Address</div>
-<div class="text-sm font-semibold text-white truncate" id="email-text">usefwaleed126@gmail.com</div>
+<div class="text-xs sm:text-sm font-semibold text-white truncate" id="email-text">usefwaleed126@gmail.com</div>
 </div>
 </div>
-<button aria-label="Copy email address" class="copy-btn text-xs font-semibold px-3 py-1.5 rounded-lg bg-purple-950 border border-purple-700/60 text-slate-300 hover:text-white hover:border-pink-500 transition-colors shrink-0 flex items-center gap-1" data-copy-target="email-text">
+<button aria-label="Copy email address" class="copy-btn text-xs font-semibold px-3 py-1.5 rounded-lg bg-purple-950/90 border border-purple-700/60 text-slate-300 hover:text-white hover:border-pink-500 transition-colors shrink-0 flex items-center gap-1" data-copy-target="email-text">
 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
 <span class="copy-label">Copy</span>
 </button>
 </div>
-<!-- LinkedIn Profile Card -->
-<a class="p-4 rounded-xl bg-[#1d0a32] border border-purple-800/50 flex items-center justify-between group hover:border-pink-500/50 transition-colors block" href="https://linkedin.com" rel="noopener noreferrer" target="_blank">
+<!-- WhatsApp Card -->
+<div class="p-4 rounded-xl glass-card flex items-center justify-between group transition-colors">
 <div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded-lg bg-blue-950/80 border border-blue-500/40 text-blue-400 flex items-center justify-center">
+<div class="w-10 h-10 rounded-lg bg-emerald-950/80 border border-emerald-500/40 text-emerald-400 flex items-center justify-center shrink-0">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"></path></svg>
+</div>
+<div>
+<div class="text-[11px] text-slate-400">Phone &amp; WhatsApp</div>
+<div class="text-xs sm:text-sm font-semibold text-white" id="phone-text">+20 10 91189532</div>
+</div>
+</div>
+<a aria-label="Chat on WhatsApp" class="text-xs font-semibold px-3 py-1.5 rounded-lg bg-emerald-950/80 border border-emerald-700/60 text-emerald-300 hover:text-white hover:bg-emerald-800 transition-colors" href="https://wa.me/201091189532" rel="noopener noreferrer" target="_blank">
+              Chat
+            </a>
+</div>
+<!-- LinkedIn Card -->
+<a class="p-4 rounded-xl glass-card flex items-center justify-between group transition-colors block" href="https://www.linkedin.com/in/yusuf-elsayed" rel="noopener noreferrer" target="_blank">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-blue-950/80 border border-blue-500/40 text-blue-400 flex items-center justify-center shrink-0">
 <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
 </div>
 <div>
@@ -653,534 +868,560 @@
 </div>
 <span class="text-slate-400 group-hover:text-pink-400 group-hover:translate-x-1 transition-all">→</span>
 </a>
-<!-- Big Direct WhatsApp Button -->
-<a class="btn-ripple w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-pink-600 to-fuchsia-600 hover:from-pink-500 hover:to-fuchsia-500 text-white font-bold text-sm tracking-wide shadow-lg shadow-pink-900/30 flex items-center justify-center gap-2 hover:scale-[1.01] transition-transform" href="https://wa.me/201091189532" rel="noopener noreferrer" target="_blank">
-<span>Message on WhatsApp</span>
+<!-- Direct Chat CTA -->
+<a class="btn-ripple w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-sm tracking-wide shadow-lg shadow-emerald-950/50 flex items-center justify-center gap-2 hover:scale-[1.01] transition-transform" href="https://wa.me/201091189532" rel="noopener noreferrer" target="_blank">
+<span>Direct WhatsApp Chat</span>
 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
 </a>
 </div>
-<!-- Right Column: Interactive Direct Inquiry Form -->
-<div class="lg:col-span-7 bg-[#1c0a2f] border border-purple-800/60 rounded-2xl p-6 sm:p-8 shadow-2xl">
-<h3 class="text-xl font-bold text-white mb-1">Send a Direct Inquiry</h3>
-<p class="text-xs text-slate-400 mb-6">Fill out this brief project scope and I will reply within 24 business hours.</p>
+<!-- Right Column: Project Inquiry Form (No financial fields, Honest direct mailto/WhatsApp UX) -->
+<div class="lg:col-span-7 glass-card rounded-2xl p-6 sm:p-8 shadow-2xl">
+<h3 class="text-xl font-bold text-white mb-1">Start a Conversation</h3>
+<p class="text-xs text-slate-400 mb-6">Submitting opens a pre-filled direct email draft to Yusuf with your exact brief.</p>
 <form class="space-y-4" id="inquiry-form" novalidate="">
-<!-- Name Field -->
+<!-- Name & Email Row -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 <div>
 <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5" for="form-name">
-                  YOUR NAME <span class="text-pink-500">*</span>
+                  FULL NAME <span class="text-pink-500">*</span>
 </label>
-<input class="w-full bg-[#120520] border border-purple-900 focus:border-pink-500 focus:ring-1 focus:ring-pink-500 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 transition-colors" id="form-name" name="name" placeholder="e.g. Tariq Al-Mansoor" required="" type="text"/>
+<input class="w-full bg-[#10041f] border border-purple-900 focus:border-pink-500 focus:ring-1 focus:ring-pink-500 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 transition-colors" id="form-name" name="name" placeholder="e.g. Omar Mansour" required="" type="text"/>
 <span class="error-msg text-xs text-rose-400 hidden mt-1 block">Please enter your name</span>
 </div>
-<!-- Email Field -->
 <div>
 <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5" for="form-email">
-                  EMAIL ADDRESS <span class="text-pink-500">*</span>
+                  WORK EMAIL <span class="text-pink-500">*</span>
 </label>
-<input class="w-full bg-[#120520] border border-purple-900 focus:border-pink-500 focus:ring-1 focus:ring-pink-500 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 transition-colors" id="form-email" name="email" placeholder="tariq@brand.com" required="" type="email"/>
-<span class="error-msg text-xs text-rose-400 hidden mt-1 block">Please enter a valid email address</span>
+<input class="w-full bg-[#10041f] border border-purple-900 focus:border-pink-500 focus:ring-1 focus:ring-pink-500 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 transition-colors" id="form-email" name="email" placeholder="omar@company.com" required="" type="email"/>
+<span class="error-msg text-xs text-rose-400 hidden mt-1 block">Please enter a valid work email</span>
 </div>
-<!-- Inquiry Type Dropdown -->
+</div>
+<!-- Project Type -->
 <div>
 <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5" for="form-type">
-                  PROJECT INQUIRY TYPE
-                </label>
-<select class="w-full bg-[#120520] border border-purple-900 focus:border-pink-500 focus:ring-1 focus:ring-pink-500 rounded-xl px-4 py-3 text-sm text-white transition-colors" id="form-type" name="type">
-<option value="strategy">Content Strategy &amp; Campaign Planning</option>
-<option value="creation">Full Content Creation &amp; Execution</option>
-<option value="identity">Brand Identity &amp; Visual Direction</option>
-<option value="branding">Personal Branding Architecture</option>
-<option value="other">Other Bespoke Collaboration</option>
+                PROJECT TYPE
+              </label>
+<select class="w-full bg-[#10041f] border border-purple-900 focus:border-pink-500 focus:ring-1 focus:ring-pink-500 rounded-xl px-4 py-3 text-sm text-white transition-colors" id="form-type" name="type">
+<option value="Content Strategy">Content Strategy</option>
+<option value="Content &amp; Creative Execution">Content &amp; Creative Execution</option>
+<option value="Personal &amp; Professional Branding">Personal &amp; Professional Branding</option>
+<option value="Full Content &amp; Brand System">Full Content &amp; Brand System</option>
 </select>
 </div>
-<!-- Scope / Brief Field -->
+<!-- Primary Goal Selectable Pills -->
+<div>
+<label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
+                PRIMARY GOAL (SELECT ALL THAT APPLY)
+              </label>
+<div class="flex flex-wrap gap-2" id="goal-pills">
+<button class="goal-pill px-3 py-1.5 rounded-lg text-xs font-medium bg-[#140624] border border-purple-900/80 text-slate-300 hover:border-pink-500/60 transition-all" data-value="Build a Brand" type="button">Build a Brand</button>
+<button class="goal-pill px-3 py-1.5 rounded-lg text-xs font-medium bg-[#140624] border border-purple-900/80 text-slate-300 hover:border-pink-500/60 transition-all" data-value="Grow on LinkedIn" type="button">Grow on LinkedIn</button>
+<button class="goal-pill px-3 py-1.5 rounded-lg text-xs font-medium bg-[#140624] border border-purple-900/80 text-slate-300 hover:border-pink-500/60 transition-all" data-value="Build a Content System" type="button">Build a Content System</button>
+<button class="goal-pill px-3 py-1.5 rounded-lg text-xs font-medium bg-[#140624] border border-purple-900/80 text-slate-300 hover:border-pink-500/60 transition-all" data-value="Launch a Campaign" type="button">Launch a Campaign</button>
+<button class="goal-pill px-3 py-1.5 rounded-lg text-xs font-medium bg-[#140624] border border-purple-900/80 text-slate-300 hover:border-pink-500/60 transition-all" data-value="Improve Visual Identity" type="button">Improve Visual Identity</button>
+<button class="goal-pill px-3 py-1.5 rounded-lg text-xs font-medium bg-[#140624] border border-purple-900/80 text-slate-300 hover:border-pink-500/60 transition-all" data-value="Social Media Content" type="button">Social Media Content</button>
+<button class="goal-pill px-3 py-1.5 rounded-lg text-xs font-medium bg-[#140624] border border-purple-900/80 text-slate-300 hover:border-pink-500/60 transition-all" data-value="Other" type="button">Other</button>
+</div>
+</div>
+<!-- Scope / Brief -->
 <div>
 <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5" for="form-brief">
-                  PROJECT SCOPE / BRIEF <span class="text-pink-500">*</span>
+                PROJECT SCOPE / BRIEF <span class="text-pink-500">*</span>
 </label>
-<textarea class="w-full bg-[#120520] border border-purple-900 focus:border-pink-500 focus:ring-1 focus:ring-pink-500 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 transition-colors resize-y" id="form-brief" name="brief" placeholder="Tell me a bit about your brand, current challenges, or timeline..." required="" rows="4"></textarea>
-<span class="error-msg text-xs text-rose-400 hidden mt-1 block">Please write a few words about your project</span>
+<textarea class="w-full bg-[#10041f] border border-purple-900 focus:border-pink-500 focus:ring-1 focus:ring-pink-500 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 transition-colors resize-y" id="form-brief" name="brief" placeholder="Tell me what you're building, what you're trying to achieve, and where you need help..." required="" rows="3"></textarea>
+<span class="error-msg text-xs text-rose-400 hidden mt-1 block">Please share a brief note about your project</span>
 </div>
-<!-- Submit Button -->
+<!-- Timeline -->
+<div>
+<label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5" for="form-timeline">
+                TIMELINE
+              </label>
+<select class="w-full bg-[#10041f] border border-purple-900 focus:border-pink-500 focus:ring-1 focus:ring-pink-500 rounded-xl px-3 py-2.5 text-xs sm:text-sm text-white transition-colors" id="form-timeline">
+<option value="Immediate / Within 2 weeks">Immediate / Within 2 weeks</option>
+<option value="Within 1 month">Within 1 month</option>
+<option value="Planning for Q2/Q3">Planning for Q2/Q3</option>
+<option value="Exploratory discussion">Exploratory discussion</option>
+</select>
+</div>
+<!-- Submit Button (Honest Direct Action) -->
 <button class="btn-ripple w-full py-4 rounded-xl bg-gradient-to-r from-pink-600 via-fuchsia-600 to-purple-600 hover:from-pink-500 hover:to-purple-500 text-white font-bold text-xs sm:text-sm tracking-wider uppercase shadow-xl shadow-pink-900/40 hover:shadow-pink-600/50 hover:scale-[1.01] active:scale-[0.99] transition-all flex items-center justify-center gap-2" id="submit-btn" type="submit">
-<span class="hidden w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" id="submit-spinner"></span>
-<span id="submit-text">SUBMIT INQUIRY →</span>
+<span id="submit-text">COMPOSE DIRECT INQUIRY EMAIL →</span>
 </button>
+<p class="text-[11px] text-center text-slate-400 mt-2">
+              Prefer WhatsApp? <a class="text-pink-400 hover:underline font-semibold" href="https://wa.me/201091189532" rel="noopener noreferrer" target="_blank">Click here to send direct WhatsApp message</a>
+</p>
 </form>
 </div>
 </div>
 </div>
 </section>
-<!-- END: ContactSection -->
+<!-- END: 7. ContactSection -->
 </main>
-<!-- BEGIN: MainFooter -->
-<footer class="bg-[#09020f] border-t border-purple-950/80 py-8 text-xs text-slate-400" data-purpose="page-footer">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-<!-- Copyright & Logo mark -->
-<div class="flex items-center gap-2">
-<span class="w-5 h-5 rounded bg-purple-700/80 text-white flex items-center justify-center text-[10px] font-bold">Y</span>
-<span>© 2026 Yousuf Khairaldeen. All rights reserved.</span>
+<!-- BEGIN: 8. Footer -->
+<footer class="bg-[#04010a] border-t border-purple-950/80 py-10 text-xs text-slate-400" data-purpose="page-footer">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="flex flex-col sm:flex-row items-center gap-3 text-center sm:text-left">
+<div class="w-6 h-6 rounded-lg bg-gradient-to-tr from-purple-600 to-pink-600 text-white flex items-center justify-center text-xs font-black">Y</div>
+<div>
+<span class="font-bold text-slate-200">Yusuf Khairaldeen</span>
+<span class="text-slate-500 mx-2">—</span>
+<span class="text-slate-400">Content Strategy • Creative Design • Brand Communication</span>
 </div>
-<!-- Links & Back to Top -->
-<div class="flex items-center gap-6">
-<a class="hover:text-pink-400 transition-colors" href="https://linkedin.com" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+</div>
+<!-- Verified Links -->
+<div class="flex items-center gap-5">
+<a class="hover:text-pink-400 transition-colors" href="https://www.linkedin.com/in/yusuf-elsayed" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+<span class="text-purple-900">|</span>
+<a class="hover:text-pink-400 transition-colors" href="mailto:usefwaleed126@gmail.com">Email</a>
 <span class="text-purple-900">|</span>
 <a class="hover:text-pink-400 transition-colors" href="https://wa.me/201091189532" rel="noopener noreferrer" target="_blank">WhatsApp</a>
 <span class="text-purple-900">|</span>
-<a class="hover:text-pink-400 transition-colors flex items-center gap-1 font-semibold" href="#hero" id="footer-back-to-top">
-<span>Back to top</span>
+<a class="hover:text-pink-400 transition-colors flex items-center gap-1 font-semibold" href="#hero">
+<span>Top</span>
 <span>↑</span>
 </a>
 </div>
 </div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 pt-6 border-t border-purple-950/40 text-center text-slate-500 text-[11px]">
+    © 2026 Yusuf Khairaldeen. All rights reserved. Grounded strategy, authentic creative direction.
+  </div>
 </footer>
-<!-- END: MainFooter -->
-<!-- BEGIN: CaseStudyModal -->
-<div aria-labelledby="modal-title" aria-modal="true" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 sm:p-6" id="case-modal" role="dialog">
-<!-- Backdrop -->
+<!-- END: 8. Footer -->
+<!-- BEGIN: CaseStudyModal (7-Part Structure) -->
+<div aria-labelledby="modal-title" aria-modal="true" class="fixed inset-0 z-50 hidden flex items-center justify-center p-3 sm:p-6" id="case-modal" role="dialog">
 <div class="fixed inset-0 bg-black/85 backdrop-blur-md transition-opacity" id="modal-backdrop"></div>
-<!-- Modal Content Container -->
-<div class="relative w-full max-w-3xl bg-[#180929] border border-purple-800 rounded-2xl shadow-2xl overflow-hidden z-10 max-h-[90vh] flex flex-col animate-fade-in">
+<div class="relative w-full max-w-3xl bg-[#120524] border border-purple-700/60 rounded-2xl shadow-2xl overflow-hidden z-10 max-h-[92vh] flex flex-col">
 <!-- Header -->
-<div class="p-6 border-b border-purple-900/60 flex items-center justify-between bg-[#1f0b35]">
+<div class="p-5 sm:p-6 border-b border-purple-900/60 flex items-center justify-between bg-[#190831]">
 <div>
+<div class="flex items-center gap-2 mb-1">
 <span class="text-[10px] font-bold uppercase tracking-wider text-pink-400 bg-pink-950/60 border border-pink-700/50 px-2.5 py-0.5 rounded-full" id="modal-badge">
             Case Study
           </span>
-<h3 class="text-2xl font-black text-white mt-1" id="modal-title">Project Title</h3>
+<span class="text-xs text-slate-400" id="modal-client">Client</span>
+</div>
+<h3 class="text-xl sm:text-2xl font-black text-white" id="modal-title">Project Title</h3>
 </div>
 <button aria-label="Close modal" class="p-2 text-slate-400 hover:text-white rounded-lg hover:bg-purple-900/50 transition-colors" id="modal-close-btn">
 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
 </button>
 </div>
-<!-- Scrollable Body -->
-<div class="p-6 overflow-y-auto space-y-6 text-sm leading-relaxed text-slate-300">
-<!-- Modal Image Showcase -->
-<div class="rounded-xl overflow-hidden border border-purple-900 max-h-72 bg-black flex items-center justify-center">
-<img alt="Case study project detail preview" class="w-full h-full object-contain" id="modal-image" src=""/>
+<!-- Scrollable 7-Step Body -->
+<div class="p-5 sm:p-6 overflow-y-auto space-y-6 text-sm leading-relaxed text-slate-300">
+<!-- Visual Asset Display -->
+<div class="rounded-xl overflow-hidden border border-purple-900 max-h-80 bg-black flex items-center justify-center">
+<img alt="Case study preview" class="w-full h-full object-contain" id="modal-image" src=""/>
 </div>
+<!-- 01 & 02: Challenge & Objective -->
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-<div class="bg-[#120520] p-4 rounded-xl border border-purple-900/50">
-<h4 class="text-xs font-bold uppercase tracking-wider text-pink-400 mb-1">Strategic Objective</h4>
-<p class="text-xs text-slate-300" id="modal-objective">Detailed objective...</p>
+<div class="bg-[#0b0217] p-4 rounded-xl border border-purple-900/50">
+<div class="text-[10px] font-black uppercase tracking-wider text-pink-400 mb-1">01 Challenge</div>
+<p class="text-xs text-slate-300 leading-relaxed" id="modal-challenge">Challenge content...</p>
 </div>
-<div class="bg-[#120520] p-4 rounded-xl border border-purple-900/50">
-<h4 class="text-xs font-bold uppercase tracking-wider text-pink-400 mb-1">Target Market &amp; Tone</h4>
-<p class="text-xs text-slate-300" id="modal-target">Market and tone...</p>
+<div class="bg-[#0b0217] p-4 rounded-xl border border-purple-900/50">
+<div class="text-[10px] font-black uppercase tracking-wider text-pink-400 mb-1">02 Objective</div>
+<p class="text-xs text-slate-300 leading-relaxed" id="modal-objective">Objective content...</p>
 </div>
 </div>
-<div>
-<h4 class="text-sm font-bold text-white uppercase tracking-wider mb-2">The Execution Blueprint</h4>
-<p class="text-slate-300" id="modal-execution">Execution description goes here...</p>
+<!-- 03: My Role (individual contribution distinguished from client situation) -->
+<div class="bg-[#0b0217] p-4 rounded-xl border border-purple-900/50 border-l-4 border-l-fuchsia-500">
+<div class="text-[10px] font-black uppercase tracking-wider text-fuchsia-400 mb-1">03 My Role &amp; Direct Contribution</div>
+<p class="text-xs sm:text-sm text-slate-200 leading-relaxed" id="modal-role">My Role content...</p>
 </div>
-<!-- Highlights & Verified Metrics -->
+<!-- 04: Strategy -->
+<div class="bg-[#0b0217] p-4 rounded-xl border border-purple-900/50">
+<div class="text-[10px] font-black uppercase tracking-wider text-pink-400 mb-1">04 Strategy</div>
+<p class="text-xs sm:text-sm text-slate-300 leading-relaxed" id="modal-strategy">Strategy description...</p>
+</div>
+<!-- 05: Execution -->
+<div class="bg-[#0b0217] p-4 rounded-xl border border-purple-900/50">
+<div class="text-[10px] font-black uppercase tracking-wider text-pink-400 mb-1">05 Execution</div>
+<p class="text-xs sm:text-sm text-slate-300 leading-relaxed" id="modal-execution">Execution details...</p>
+</div>
+<!-- 06: Verified Results -->
 <div class="bg-gradient-to-r from-purple-950/60 to-pink-950/40 p-4 rounded-xl border border-pink-500/30">
-<h4 class="text-xs font-bold uppercase tracking-wider text-pink-300 mb-3">Key Performance Highlights</h4>
-<div class="grid grid-cols-3 gap-2 text-center" id="modal-metrics">
-<!-- Populated via JS -->
+<div class="text-[10px] font-black uppercase tracking-wider text-pink-300 mb-3">06 Verified Results</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center" id="modal-metrics">
+<!-- Dynamically populated -->
 </div>
 </div>
+<!-- 07: What I Learned -->
+<div class="bg-[#0b0217] p-4 rounded-xl border border-purple-900/50 border-l-4 border-l-purple-400">
+<div class="text-[10px] font-black uppercase tracking-wider text-purple-300 mb-1">07 What I Learned</div>
+<p class="text-xs sm:text-sm text-slate-300 leading-relaxed italic" id="modal-learned">Key takeaways...</p>
 </div>
-<!-- Footer CTA -->
-<div class="p-4 border-t border-purple-900/60 bg-[#140624] flex items-center justify-between">
-<span class="text-xs text-slate-400">Want similar results for your business?</span>
-<a class="px-5 py-2 rounded-lg bg-pink-600 hover:bg-pink-500 text-white font-semibold text-xs transition-colors" href="#contact" id="modal-cta">
-          Discuss This Solution →
-        </a>
+</div>
+<!-- Footer Action -->
+<div class="p-4 border-t border-purple-900/60 bg-[#0d041a] flex items-center justify-between">
+<span class="text-xs text-slate-400">Looking for a similar strategic solution?</span>
+<a class="px-4 py-2 rounded-lg bg-pink-600 hover:bg-pink-500 text-white font-semibold text-xs transition-colors" href="#contact" id="modal-cta">
+        Discuss This Direction →
+      </a>
 </div>
 </div>
 </div>
 <!-- END: CaseStudyModal -->
 <!-- BEGIN: FloatingWidgets -->
-<!-- Toast Notification -->
 <div class="fixed bottom-6 right-6 z-50 max-w-sm bg-purple-950 border border-pink-500/80 text-white px-5 py-3.5 rounded-xl shadow-2xl flex items-center gap-3 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none" id="toast">
 <div class="w-6 h-6 rounded-full bg-pink-500/30 text-pink-400 flex items-center justify-center shrink-0">✓</div>
-<div class="text-xs font-medium" id="toast-message">Message sent successfully!</div>
+<div class="text-xs font-medium" id="toast-message">Notification</div>
 </div>
-<!-- Floating Back To Top Button -->
 <button aria-label="Scroll back to top" class="fixed bottom-6 left-6 z-40 p-3 rounded-full bg-purple-900/80 border border-pink-500/40 text-pink-400 hover:text-white hover:bg-pink-600 shadow-xl opacity-0 translate-y-6 transition-all duration-300" id="floating-top-btn">
 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M5 15l7-7 7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
 </button>
 <!-- END: FloatingWidgets -->
-<!-- BEGIN: ApplicationEngineScripts -->
+<!-- BEGIN: InteractiveScripts -->
 <script data-purpose="case-study-data">
-    // Complete case study database
-    const caseStudies = {
-      rawi: {
-        title: "Al Rawi Academy",
-        badge: "Content Specialist",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAFd06gjZFZCp7xZJKwhqlMYfKJBYjg6hmf4T1PUZYJKaTjMZFS7_S2GH6Vj8Awh33HryfLdnF7kU_YsNEteQcn_6Pt19WIhJTkCUhTLFo5CMxMvIIEhxGF92E_d3u6YR-xeweHRg2YN1V1qog8oCE-Bm20PSIuNIOqgfRq5D5wevwJcGnKvh_UTYsEKFuSMFJbYAuamMovpYn85czbFtAFWNo4hNvL1hvu9pdHRafUKJbhthPEsGRprhs5r5mTdaVt-Q",
-        objective: "Build an organic LinkedIn distribution engine for an Arabic/Quranic education brand targeting diaspora and Western learners.",
-        target: "English-speaking professionals, Gulf expatriates & diaspora seeking credible, modern Islamic studies.",
-        execution: "Developed a dual-pillar editorial system pairing academic authority with relatable personal transformation stories. Standardized carousel templates, prompt-engineered visual infographics, and engaged active educational communities.",
-        metrics: [
-          { val: "2,400+", lbl: "Engagements" },
-          { val: "15+", lbl: "Viral Posts" },
-          { val: "300%+", lbl: "Reach Boost" }
-        ]
-      },
-      sharqawi: {
-        title: "Ruwai Al-Sharqawi",
-        badge: "Content Creator",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCvrY5olwcsy2ws19fD9wVIKTIgeMW04z4zCRWUx9FikSoK911wicgJy7FNtLmGP8EdVb9FCUb3kfIRgtOENVXvRYX8r5qyx1kBboEAbIHFFDiH06f4mRY10xK7bScnqDKXyXhi4gf19ncf6BnThclZeIC-QBmvEXHEyIhDMuNClBJ60s3kg90Bn-qXGTMExwIU1QrFSARYUilCpX0ikphO1Oil9CSmDvB_m7NuIJAU3LN5RFlIxtO4Z9DwnBhOvXLIdQ",
-        objective: "Elevate perception of architectural door hardware & furniture accessories into high-status interior jewelry.",
-        target: "Interior designers, architects, and luxury homeowners across Cairo, Alexandria, and GCC capitals.",
-        execution: "Crafted cinematic macro-photography styling paired with resonant Arabic micro-copy ('تفصيلة صغيرة... بتغير شكل الباب كله'). Highlighted tactile craftsmanship and timeless finishes to justify premium pricing.",
-        metrics: [
-          { val: "45,000+", lbl: "Impressions" },
-          { val: "8,500+", lbl: "Total Reach" },
-          { val: "100%", lbl: "Organic Growth" }
-        ]
-      },
-      realtyplus: {
-        title: "RealtyPlus Group",
-        badge: "Content Specialist",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCgt4pwbOlRAf4hGXEndcngAp4SwSbHu6zPr2yeofqgiUVaYn2jsCGpSrMn-UA2m0agDsPg8OigTfsi2_RNBOtISSHXYSI4KZrEtUwDhZh3WhgbwyExuHIk1g0XTh4xLTFw9pZ0nLB0mnCqiBz97CWFbXfq9KzpSfnlN1zkTcORD4iujnOBOUxqeprzUe64uYVAgNFCYF0aU06bMnc1zzHmD3UUILNN8x4V0QLEudOroxmmaVtQdn7wGFybdodiB1RJyA",
-        objective: "Demystify cross-border real estate legal regulations and build unassailable credibility between Egyptian and Saudi corporate investors.",
-        target: "High-net-worth investors, corporate executives, and institutional funds navigating cross-border acquisitions.",
-        execution: "Architected a weekly 'Legal Due Diligence' series, cultural milestone celebrations with exquisite calligraphy design, and executive briefs breaking down tax and property laws into digestible carousel diagrams.",
-        metrics: [
-          { val: "50+", lbl: "Legal Posts" },
-          { val: "Top Viral", lbl: "Series Rank" },
-          { val: "High Trust", lbl: "Authority Index" }
-        ]
-      },
-      fouad: {
-        title: "Hesham Fouad",
-        badge: "Personal Branding Architecture",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCPPECpMAcH4ouPNwax1CDroQUwHr1JOqcDTXSQC3kkMHCTvD_8l3YZxBnGNJAOP69fEuFN9LqKe97Z-PJClEZ80EIB60aFlRd7TXTfSeUTmQ79xyJ1nBeF6FBxYHyAcx-wW7XlB6whQZyA48ZSacQFIIaXlOT8dvneA9A-tP8J1X8scK5KuGP-x_U1ruw7Gawb_R1XK9l0voklcDB9OqmDoKaEmyaFqo6vEe8dAFE1787TEXsOdgPbsucCP-mbz8Qsvg",
-        objective: "Position Hesham Fouad from senior financial manager to the definitive authority on CMA/CFA financial leadership in the Gulf.",
-        target: "C-Suite executives, finance managers, conference organizers, and ambitious corporate professionals.",
-        execution: "Created the signature dark-emerald editorial brand 'الجسر بين الماضي والمستقبل المالي' (The bridge between past and financial future). Authored sharp contrarian perspectives on modern corporate valuation and capital structure.",
-        metrics: [
-          { val: "+300%", lbl: "Inquiry Quality" },
-          { val: "5.2x", lbl: "Follower Growth" },
-          { val: "4", lbl: "Keynote Invites" }
-        ]
-      }
-    };
-  </script>
-<script data-purpose="smooth-scrolling-and-scrollspy">
-    // Smooth scrolling with sticky header offset calculation
-    const header = document.getElementById('main-header');
-    
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          e.preventDefault();
-          const headerOffset = header.offsetHeight + 10;
-          const elementPosition = targetElement.getBoundingClientRect().top;
-          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
-          });
-
-          // Close mobile menu if opened
-          const mobileMenu = document.getElementById('mobile-menu');
-          const hamIcon = document.getElementById('hamburger-icon');
-          const closeIcon = document.getElementById('close-icon');
-          if (!mobileMenu.classList.contains('hidden')) {
-            mobileMenu.classList.add('hidden');
-            hamIcon.classList.remove('hidden');
-            closeIcon.classList.add('hidden');
-          }
-        }
-      });
-    });
-
-    // Scrollspy navigation highlight & floating top button visibility
-    window.addEventListener('scroll', () => {
-      const scrollPos = window.scrollY + 140;
-      const sections = ['hero', 'about', 'work', 'services', 'contact'];
-      const navLinks = document.querySelectorAll('.nav-link');
-      const floatingTopBtn = document.getElementById('floating-top-btn');
-
-      // Floating button toggle
-      if (window.scrollY > 350) {
-        floatingTopBtn.classList.remove('opacity-0', 'translate-y-6', 'pointer-events-none');
-      } else {
-        floatingTopBtn.classList.add('opacity-0', 'translate-y-6', 'pointer-events-none');
-      }
-
-      sections.forEach(sectionId => {
-        const sec = document.getElementById(sectionId);
-        if (sec) {
-          const top = sec.offsetTop;
-          const height = sec.offsetHeight;
-          if (scrollPos >= top && scrollPos < top + height) {
-            navLinks.forEach(link => {
-              if (link.getAttribute('href') === `#${sectionId}`) {
-                link.classList.add('text-pink-400', 'font-bold');
-                link.classList.remove('text-slate-300');
-              } else {
-                link.classList.remove('text-pink-400', 'font-bold');
-                link.classList.add('text-slate-300');
-              }
-            });
-          }
-        }
-      });
-    });
-
-    // Floating button click
-    document.getElementById('floating-top-btn').addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  </script>
-<script data-purpose="interactive-filters">
-    // Portfolio discipline filtering
-    const filterButtons = document.querySelectorAll('#filter-container .filter-btn');
-    const projectCards = document.querySelectorAll('.project-card');
-
-    filterButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        // Active state styles
-        filterButtons.forEach(btn => {
-          btn.classList.remove('bg-pink-600', 'text-white', 'shadow-lg', 'shadow-pink-900/50', 'active');
-          btn.classList.add('bg-[#1e0d36]', 'text-slate-300', 'border', 'border-purple-800/60');
-        });
-
-        button.classList.add('bg-pink-600', 'text-white', 'shadow-lg', 'shadow-pink-900/50', 'active');
-        button.classList.remove('bg-[#1e0d36]', 'text-slate-300', 'border', 'border-purple-800/60');
-
-        const selectedFilter = button.getAttribute('data-filter');
-
-        projectCards.forEach(card => {
-          const categories = card.getAttribute('data-categories') || '';
-          if (selectedFilter === 'all' || categories.includes(selectedFilter)) {
-            card.style.display = 'flex';
-            setTimeout(() => {
-              card.style.opacity = '1';
-              card.style.transform = 'scale(1)';
-            }, 50);
-          } else {
-            card.style.opacity = '0';
-            card.style.transform = 'scale(0.96)';
-            setTimeout(() => {
-              card.style.display = 'none';
-            }, 250);
-          }
-        });
-      });
-    });
-  </script>
-<script data-purpose="modal-controller">
-    // Case study dialog modal controller
-    const modal = document.getElementById('case-modal');
-    const modalCloseBtn = document.getElementById('modal-close-btn');
-    const modalBackdrop = document.getElementById('modal-backdrop');
-    const modalTitle = document.getElementById('modal-title');
-    const modalBadge = document.getElementById('modal-badge');
-    const modalImage = document.getElementById('modal-image');
-    const modalObjective = document.getElementById('modal-objective');
-    const modalTarget = document.getElementById('modal-target');
-    const modalExecution = document.getElementById('modal-execution');
-    const modalMetrics = document.getElementById('modal-metrics');
-    const modalCta = document.getElementById('modal-cta');
-
-    function openModal(projectId) {
-      const data = caseStudies[projectId];
-      if (!data) return;
-
-      modalTitle.textContent = data.title;
-      modalBadge.textContent = data.badge;
-      modalImage.src = data.image;
-      modalImage.alt = `${data.title} work preview`;
-      modalObjective.textContent = data.objective;
-      modalTarget.textContent = data.target;
-      modalExecution.textContent = data.execution;
-
-      // Render metrics
-      modalMetrics.innerHTML = data.metrics.map(m => `
-        <div class="p-2 bg-[#17082c] rounded-lg border border-purple-800/60">
-          <div class="text-base font-black text-pink-400">${m.val}</div>
-          <div class="text-[10px] text-slate-400 uppercase">${m.lbl}</div>
-        </div>
-      `).join('');
-
-      modal.classList.remove('hidden');
-      document.body.classList.add('overflow-hidden');
+  const caseStudies = {
+    rawi: {
+      title: "Organic LinkedIn Distribution Engine",
+      client: "Al Rawi Academy",
+      badge: "Content Strategy & Planning",
+      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBy_FaQ8hB1XykhuIs0PgxSPv06DaLKjYeh9Yp4RzbJQNgeUBe_bIJRXSFGO0ZqYwjfZ99OOL6_eLAM4oxy9E5w9q9l6avS2BgryORgbwltWObi7nHUIZxjgZLlIBOaOBjU_caOIWk98oOMsZqZUmRcZCE8SO--1ss1njwH8EdoILU8HS2qWxZ8Lhdm7zCYxxqyRXg78WVl0sSf8di5ey8qxxmSGfegYAQNPe6fqMo4WSd7rZgP7dXmBf3lh2uq1eglsw",
+      challenge: "Establish genuine educational authority and trust on LinkedIn for a Quranic education platform without resorting to sensational clickbait or generic religious slogans.",
+      objective: "Build an organic inbound content engine targeting non-Arabic speaking diaspora learners and parents seeking authentic, certified instructors.",
+      role: "Led the entire content strategy, editorial calendar design, prompt engineering for clean instructional visual formats, and authored bilingual Arabic-English copy.",
+      strategy: "Structured a dual-pillar editorial framework: academic linguistic insight paired with student transformation stories. Built repeatable visual carousel frameworks and optimized publishing cadences for peak engagement.",
+      execution: "Drafted high-context bilingual copywriting, prompt-engineered clean infographic visuals, scripted instructional micro-lessons, and instituted active discussion moderation.",
+      metrics: [
+        { val: "300%", lbl: "Reach Increase" },
+        { val: "2,400+", lbl: "Engagements" },
+        { val: "15+", lbl: "Top Posts" },
+        { val: "976", lbl: "Organic Followers" }
+      ],
+      learned: "Educational authority on professional platforms like LinkedIn requires respect for audience intelligence. Substantive, analytical breakdowns outperform broad inspirational quotes every single time."
+    },
+    sharqawi: {
+      title: "Luxury Architectural Door Hardware",
+      client: "Ruwai / Al-Sharkawy",
+      badge: "Creative Direction & Production",
+      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuATe2nC-vEo4g6Y0C9XJ4dCNzklCJs77MLCgoFv7yTdeMjsJOoH6g9VDj-XDicSDSsTPEIPm9OMoB_JN6ssSDYxBb2VIGXLrsolV1mkI6sMKdbt5ndDo-d72NpOvsDKfAjYulwBGel3NuiWi3EjrV9s-BAXF8KLGSflHuLdPel5bA-F9ovUC59ZuiE6gs7fRBzEtoSCKjgwhKW7MBXRr9fdTxtiMQA66Zqrnb_NcJN755rmXqFizIQGpyvcIEQ0Pp8o2w",
+      challenge: "Hardware and door handles are often commoditized. The challenge was shifting brand perception from functional building supply to interior design jewelry.",
+      objective: "Differentiate craftsmanship and premium finishing to capture affluent Egyptian and Gulf interior decorators, architects, and luxury homeowners.",
+      role: "Served as Creative Director, scripting the architectural narrative, engineering the visual staging prompts, and directing the final graphic treatment and localized copy.",
+      strategy: "Elevated the product narrative through macro-lifestyle staging and resonant Arabic micro-copy ('تفصيلة صغيرة... بتغير شكل الباب كله'). Highlighted tactile details, matte finishes, and architectural harmony.",
+      execution: "Directed AI-assisted visual asset generation, color-graded physical materials into cinematic residential scenes, and unified the social feed into a coherent gallery aesthetic.",
+      metrics: [
+        { val: "45,000+", lbl: "Impressions" },
+        { val: "8,500+", lbl: "Unique Reach" },
+        { val: "4.2%", lbl: "Engage Rate" }
+      ],
+      learned: "In luxury consumer categories, imagery must communicate tactile weight and lifestyle context before pricing is even mentioned."
+    },
+    realtyplus: {
+      title: "B2B Legal & Real Estate Positioning",
+      client: "RealtyPlus Group",
+      badge: "Content Strategy & Messaging",
+      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuB9pON4_XyQBHBMnkq-aIlSalZ7zvoXl07va-DWdprpCJM91NNTU9Hgj_uRr1Ti8NesVt7gXClBbCDTXIo9qINgFrDB8goByuWFJ425fwGIgVWoUb67YbhM7516S2x07VUqTmKjo0XVltlD_ayGoJJxsYYGfcrw0i7MP9sCBlVuSzG_9rZc_1IsUeWGhPECX45uEJuspelWGNHCUKG0GkEg-spIl4vTfng-7zs4aiyAYQzsrfHfYSD2frRM6Y-VNyC0qw",
+      challenge: "Demystifying complex cross-border property and corporate investment laws between Egypt and Saudi Arabia without overwhelming executive decision-makers.",
+      objective: "Establish institutional trust and top-of-mind recall for corporate investors and high-net-worth real estate buyers navigating regulatory compliance.",
+      role: "Developed the content strategy framework, drafted the core brand messaging pillars, and established the B2B visual guidelines and seasonal campaign directions.",
+      strategy: "Designed an authoritative 'Legal Due Diligence' series coupled with culturally respectful milestone visuals to humanize legal advisory.",
+      execution: "Authored plain-language legal explainers, infographic breakdowns of investor laws, and cohesive B2B social assets balancing formal legal credibility with modern layout.",
+      metrics: [
+        { val: "50+", lbl: "Strategic Posts" },
+        { val: "Top Authority", lbl: "B2B Positioning" },
+        { val: "High-Trust", lbl: "Client Sentiment" }
+      ],
+      learned: "Complex professional services thrive when content breaks down anxiety-inducing legal friction into calm, predictable clarity."
+    },
+    fouad: {
+      title: "Executive Thought Leadership Architecture",
+      client: "Hesham Fouad (Financial Leadership)",
+      badge: "Personal Branding",
+      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAWeS2EqQXo1yHWr4vCdSMag384--udayuv-4L86L0RaNP9NsqvisyMji_2CzsKhYlHeuSKDEWjK603eBAGY9Y922RKGYcEVC-W5tFZzjXjjJS7QfU4z6E0L7CoP4SDg53g-basaDdFtXumsEb-L3OT_ZK7FFpCXl1oLnG0jrLr8AhLTX_nBS-wTEXyPaN4gtK1RDxPX6cSFH5AIZoe5kOQSXTW7KllXTZmJi1xnZ-AGvOBOvegJI6fZFMmHluTr-3BaA",
+      challenge: "Transforming an accomplished corporate financial manager into an identifiable, industry-recognized thought leader in Gulf corporate finance and CMA/CFA leadership.",
+      objective: "Increase inbound consulting inquiries and secure authoritative keynote invitations across Gulf financial and management forums.",
+      role: "Personally structured the narrative positioning, drafted the long-form essay framework, and designed the dark emerald visual identity system.",
+      strategy: "Created the signature editorial concept 'الجسر بين الماضي والمستقبل المالي' (The Bridge Between Past and Financial Future) paired with a dark emerald aesthetic.",
+      execution: "Crafted weekly contrarian essays on corporate valuation, financial forecasting, and operational modeling. Produced bespoke branded cards and profile architecture.",
+      metrics: [
+        { val: "+300%", lbl: "Inquiry Quality" },
+        { val: "5.2×", lbl: "Follower Growth" },
+        { val: "4", lbl: "Keynote Invites" }
+      ],
+      learned: "Personal branding for executives is not about personal vanity; it is about clarifying their perspective on complex industry problems."
     }
+  };
+</script>
+<script data-purpose="app-functionality">
+  // Modal Controller
+  const modal = document.getElementById('case-modal');
+  const modalCloseBtn = document.getElementById('modal-close-btn');
+  const modalBackdrop = document.getElementById('modal-backdrop');
+  const modalTitle = document.getElementById('modal-title');
+  const modalClient = document.getElementById('modal-client');
+  const modalBadge = document.getElementById('modal-badge');
+  const modalImage = document.getElementById('modal-image');
+  const modalChallenge = document.getElementById('modal-challenge');
+  const modalObjective = document.getElementById('modal-objective');
+  const modalRole = document.getElementById('modal-role');
+  const modalStrategy = document.getElementById('modal-strategy');
+  const modalExecution = document.getElementById('modal-execution');
+  const modalMetrics = document.getElementById('modal-metrics');
+  const modalLearned = document.getElementById('modal-learned');
+  const modalCta = document.getElementById('modal-cta');
 
-    function closeModal() {
-      modal.classList.add('hidden');
-      document.body.classList.remove('overflow-hidden');
+  function openModal(id) {
+    const data = caseStudies[id];
+    if (!data) return;
+
+    modalTitle.textContent = data.title;
+    modalClient.textContent = data.client;
+    modalBadge.textContent = data.badge;
+    modalImage.src = data.image;
+    modalImage.alt = `${data.title} showcase`;
+    modalChallenge.textContent = data.challenge;
+    modalObjective.textContent = data.objective;
+    modalRole.textContent = data.role;
+    modalStrategy.textContent = data.strategy;
+    modalExecution.textContent = data.execution;
+    modalLearned.textContent = data.learned;
+
+    modalMetrics.innerHTML = data.metrics.map(m => `
+      <div class="p-2 bg-[#120520] rounded-lg border border-purple-800/60">
+        <div class="text-base font-black text-pink-400">${m.val}</div>
+        <div class="text-[10px] text-slate-400 uppercase">${m.lbl}</div>
+      </div>
+    `).join('');
+
+    modal.classList.remove('hidden');
+    document.body.classList.add('overflow-hidden');
+  }
+
+  function closeModal() {
+    modal.classList.add('hidden');
+    document.body.classList.remove('overflow-hidden');
+  }
+
+  document.querySelectorAll('.project-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const id = card.getAttribute('data-project-id');
+      openModal(id);
+    });
+  });
+
+  modalCloseBtn.addEventListener('click', closeModal);
+  modalBackdrop.addEventListener('click', closeModal);
+  modalCta.addEventListener('click', closeModal);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+      closeModal();
     }
+  });
 
-    document.querySelectorAll('.open-modal-btn').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const id = btn.getAttribute('data-project-id');
-        openModal(id);
+  // Filter Buttons
+  const filterBtns = document.querySelectorAll('#filter-container .filter-btn');
+  const projectCards = document.querySelectorAll('.project-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => {
+        b.classList.remove('bg-pink-600', 'text-white', 'shadow-lg', 'shadow-pink-900/50', 'active');
+        b.classList.add('bg-[#190a2e]', 'text-slate-300', 'border', 'border-purple-800/60');
       });
-    });
 
-    modalCloseBtn.addEventListener('click', closeModal);
-    modalBackdrop.addEventListener('click', closeModal);
-    modalCta.addEventListener('click', closeModal);
+      btn.classList.add('bg-pink-600', 'text-white', 'shadow-lg', 'shadow-pink-900/50', 'active');
+      btn.classList.remove('bg-[#190a2e]', 'text-slate-300', 'border', 'border-purple-800/60');
 
-    // ESC key listener
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
-        closeModal();
-      }
-    });
-  </script>
-<script data-purpose="clipboard-and-toast">
-    // Toast notification utility
-    function showToast(message) {
-      const toast = document.getElementById('toast');
-      const toastMsg = document.getElementById('toast-message');
-      toastMsg.textContent = message;
-      toast.classList.remove('opacity-0', 'translate-y-24', 'pointer-events-none');
-
-      setTimeout(() => {
-        toast.classList.add('opacity-0', 'translate-y-24', 'pointer-events-none');
-      }, 3200);
-    }
-
-    // Clipboard copy functionality
-    document.querySelectorAll('.copy-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const targetId = btn.getAttribute('data-copy-target');
-        const textToCopy = document.getElementById(targetId)?.textContent.trim();
-        const label = btn.querySelector('.copy-label');
-
-        if (textToCopy) {
-          navigator.clipboard.writeText(textToCopy).then(() => {
-            const originalText = label.textContent;
-            label.textContent = 'Copied! ✓';
-            btn.classList.add('text-pink-400', 'border-pink-500');
-
-            showToast(`Copied to clipboard: ${textToCopy}`);
-
-            setTimeout(() => {
-              label.textContent = originalText;
-              btn.classList.remove('text-pink-400', 'border-pink-500');
-            }, 2000);
-          });
-        }
-      });
-    });
-  </script>
-<script data-purpose="form-handling">
-    // Inquiry Form submission & real-time validation
-    const form = document.getElementById('inquiry-form');
-    const submitBtn = document.getElementById('submit-btn');
-    const spinner = document.getElementById('submit-spinner');
-    const submitText = document.getElementById('submit-text');
-
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-
-      let isValid = true;
-      const nameInput = document.getElementById('form-name');
-      const emailInput = document.getElementById('form-email');
-      const briefInput = document.getElementById('form-brief');
-
-      // Name check
-      if (!nameInput.value.trim()) {
-        showError(nameInput, true);
-        isValid = false;
-      } else {
-        showError(nameInput, false);
-      }
-
-      // Email check
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(emailInput.value.trim())) {
-        showError(emailInput, true);
-        isValid = false;
-      } else {
-        showError(emailInput, false);
-      }
-
-      // Brief check
-      if (!briefInput.value.trim()) {
-        showError(briefInput, true);
-        isValid = false;
-      } else {
-        showError(briefInput, false);
-      }
-
-      if (!isValid) return;
-
-      // Simulating network request with spinner state
-      submitBtn.disabled = true;
-      spinner.classList.remove('hidden');
-      submitText.textContent = 'TRANSMITTING BRIEF...';
-
-      setTimeout(() => {
-        submitBtn.disabled = false;
-        spinner.classList.add('hidden');
-        submitText.textContent = 'SUBMIT INQUIRY →';
-        
-        showToast('Message Sent! Yousuf has received your inquiry.');
-        form.reset();
-      }, 800);
-    });
-
-    function showError(inputElement, show) {
-      const parent = inputElement.parentElement;
-      const err = parent.querySelector('.error-msg');
-      if (err) {
-        if (show) {
-          err.classList.remove('hidden');
-          inputElement.classList.add('border-rose-500');
+      const filter = btn.getAttribute('data-filter');
+      projectCards.forEach(card => {
+        const cats = card.getAttribute('data-categories') || '';
+        if (filter === 'all' || cats.includes(filter)) {
+          card.style.display = 'flex';
+          card.style.opacity = '1';
         } else {
-          err.classList.add('hidden');
-          inputElement.classList.remove('border-rose-500');
+          card.style.display = 'none';
         }
-      }
-    }
-  </script>
-<script data-purpose="mobile-menu-and-ripples">
-    // Mobile navigation toggler
-    const mobileBtn = document.getElementById('mobile-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const hamIcon = document.getElementById('hamburger-icon');
-    const closeIcon = document.getElementById('close-icon');
-
-    mobileBtn.addEventListener('click', () => {
-      const isClosed = mobileMenu.classList.contains('hidden');
-      if (isClosed) {
-        mobileMenu.classList.remove('hidden');
-        hamIcon.classList.add('hidden');
-        closeIcon.classList.remove('hidden');
-      } else {
-        mobileMenu.classList.add('hidden');
-        hamIcon.classList.remove('hidden');
-        closeIcon.classList.add('hidden');
-      }
-    });
-
-    // Material design dynamic button ripple effect
-    document.querySelectorAll('.btn-ripple').forEach(button => {
-      button.addEventListener('click', function (e) {
-        const circle = document.createElement('span');
-        const diameter = Math.max(this.clientWidth, this.clientHeight);
-        const radius = diameter / 2;
-        const rect = this.getBoundingClientRect();
-
-        circle.style.width = circle.style.height = `${diameter}px`;
-        circle.style.left = `${e.clientX - rect.left - radius}px`;
-        circle.style.top = `${e.clientY - rect.top - radius}px`;
-        circle.classList.add('ripple');
-
-        const ripple = this.getElementsByClassName('ripple')[0];
-        if (ripple) {
-          ripple.remove();
-        }
-
-        this.appendChild(circle);
       });
     });
-  </script>
-<!-- END: ApplicationEngineScripts -->
+  });
+
+  // Goal Pills Selection
+  document.querySelectorAll('.goal-pill').forEach(pill => {
+    pill.addEventListener('click', () => {
+      pill.classList.toggle('bg-pink-600');
+      pill.classList.toggle('text-white');
+      pill.classList.toggle('border-pink-500');
+      pill.classList.toggle('bg-[#140624]');
+      pill.classList.toggle('text-slate-300');
+    });
+  });
+
+  // Toast Utility
+  function showToast(msg) {
+    const toast = document.getElementById('toast');
+    const toastMsg = document.getElementById('toast-message');
+    toastMsg.textContent = msg;
+    toast.classList.remove('opacity-0', 'translate-y-24', 'pointer-events-none');
+    setTimeout(() => {
+      toast.classList.add('opacity-0', 'translate-y-24', 'pointer-events-none');
+    }, 3200);
+  }
+
+  // Copy to clipboard
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.getAttribute('data-copy-target');
+      const text = document.getElementById(targetId)?.textContent.trim();
+      const label = btn.querySelector('.copy-label');
+      if (text) {
+        navigator.clipboard.writeText(text).then(() => {
+          const original = label.textContent;
+          label.textContent = 'Copied!';
+          btn.classList.add('text-pink-400', 'border-pink-500');
+          showToast(`Copied to clipboard: ${text}`);
+          setTimeout(() => {
+            label.textContent = original;
+            btn.classList.remove('text-pink-400', 'border-pink-500');
+          }, 2000);
+        });
+      }
+    });
+  });
+
+  // Real Honest UX: Form Submission via Direct Email Draft
+  const form = document.getElementById('inquiry-form');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    let valid = true;
+
+    const name = document.getElementById('form-name');
+    const email = document.getElementById('form-email');
+    const brief = document.getElementById('form-brief');
+    const type = document.getElementById('form-type').value;
+    const timeline = document.getElementById('form-timeline').value;
+
+    // Validate Name
+    if (!name.value.trim()) {
+      showError(name, true);
+      valid = false;
+    } else {
+      showError(name, false);
+    }
+
+    // Validate Email
+    const emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailReg.test(email.value.trim())) {
+      showError(email, true);
+      valid = false;
+    } else {
+      showError(email, false);
+    }
+
+    // Validate Brief
+    if (!brief.value.trim()) {
+      showError(brief, true);
+      valid = false;
+    } else {
+      showError(brief, false);
+    }
+
+    if (!valid) return;
+
+    // Gather selected goals
+    const selectedGoals = [];
+    document.querySelectorAll('.goal-pill.bg-pink-600').forEach(p => {
+      selectedGoals.push(p.getAttribute('data-value'));
+    });
+    const goalsStr = selectedGoals.length > 0 ? selectedGoals.join(', ') : 'Not specified';
+
+    const subject = encodeURIComponent(`Project Inquiry: ${name.value.trim()} — ${type}`);
+    const bodyContent = 
+`Hello Yusuf,
+
+I would like to discuss a project with you:
+
+Name: ${name.value.trim()}
+Email: ${email.value.trim()}
+Project Type: ${type}
+Primary Goals: ${goalsStr}
+Timeline: ${timeline}
+
+Project Brief:
+${brief.value.trim()}
+
+Looking forward to connecting!`;
+
+    const mailtoUrl = `mailto:usefwaleed126@gmail.com?subject=${subject}&body=${encodeURIComponent(bodyContent)}`;
+
+    showToast('Opening your email client with your pre-filled inquiry...');
+    window.location.href = mailtoUrl;
+  });
+
+  function showError(input, show) {
+    const parent = input.parentElement;
+    const err = parent.querySelector('.error-msg');
+    if (err) {
+      if (show) {
+        err.classList.remove('hidden');
+        input.classList.add('border-rose-500');
+      } else {
+        err.classList.add('hidden');
+        input.classList.remove('border-rose-500');
+      }
+    }
+  }
+
+  // Scrollspy & Back to Top
+  const floatingTopBtn = document.getElementById('floating-top-btn');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      floatingTopBtn.classList.remove('opacity-0', 'translate-y-6', 'pointer-events-none');
+    } else {
+      floatingTopBtn.classList.add('opacity-0', 'translate-y-6', 'pointer-events-none');
+    }
+  });
+
+  floatingTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // Mobile menu
+  const mobileToggle = document.getElementById('mobile-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const hamIcon = document.getElementById('hamburger-icon');
+  const closeIcon = document.getElementById('close-icon');
+
+  mobileToggle.addEventListener('click', () => {
+    const isHidden = mobileMenu.classList.contains('hidden');
+    if (isHidden) {
+      mobileMenu.classList.remove('hidden');
+      hamIcon.classList.add('hidden');
+      closeIcon.classList.remove('hidden');
+    } else {
+      mobileMenu.classList.add('hidden');
+      hamIcon.classList.remove('hidden');
+      closeIcon.classList.add('hidden');
+    }
+  });
+
+  document.querySelectorAll('.mobile-nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      hamIcon.classList.remove('hidden');
+      closeIcon.classList.add('hidden');
+    });
+  });
+
+  // Ripple effect on click
+  document.querySelectorAll('.btn-ripple').forEach(button => {
+    button.addEventListener('click', function(e) {
+      const circle = document.createElement('span');
+      const diameter = Math.max(this.clientWidth, this.clientHeight);
+      const radius = diameter / 2;
+      const rect = this.getBoundingClientRect();
+      circle.style.width = circle.style.height = `${diameter}px`;
+      circle.style.left = `${e.clientX - rect.left - radius}px`;
+      circle.style.top = `${e.clientY - rect.top - radius}px`;
+      circle.classList.add('ripple');
+      const prevRipple = this.querySelector('.ripple');
+      if (prevRipple) prevRipple.remove();
+      this.appendChild(circle);
+    });
+  });
+</script>
+<!-- END: InteractiveScripts -->
 </body></html>
